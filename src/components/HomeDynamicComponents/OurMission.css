@@ -1,0 +1,189 @@
+.our-mission-vision-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.ovm-box.combined {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.ovm-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  min-width: 250px;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f7;
+}
+
+.ovm-img {
+  width: 100%;
+  max-width: 300px;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.ovm-content {
+  flex: 1.5;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ovm-content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.ovm-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* .main-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+} */
+
+.main-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Our Mission Image Styles */
+.our-mission .om-cont img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Leadership Section Image - Full Size */
+.leadership-section .om-cont img {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  background: #f8f9fa;
+}
+
+.our-mission .om-cont img:hover {
+  transform: scale(1.05);
+}
+
+/* Leadership Section Styles - Same as previous section */
+.leadership-section {
+  /* Remove custom background to match previous section */
+}
+
+.leadership-card {
+  /* Remove card styling to match previous section */
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.leadership-card h4 {
+  /* Style like the span elements in previous section */
+  color: #06038F;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.leadership-card h3 {
+  /* Style like the span elements in previous section */
+  color: #06038F;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.leadership-card p {
+  /* Style like the p elements in previous section */
+  color: #555;
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .ovm-box.combined {
+    flex-direction: column;
+  }
+
+  .ovm-images, .ovm-content {
+    padding: 20px;
+  }
+
+  .ovm-content h2 {
+    font-size: 24px;
+  }
+
+  .ovm-content p {
+    font-size: 15px;
+  }
+}
+
+/* Responsive Image Styles */
+@media (max-width: 768px) {
+  .our-mission .om-cont img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  .leadership-section .om-cont img {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .our-mission .om-cont img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  .leadership-section .om-cont img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+}

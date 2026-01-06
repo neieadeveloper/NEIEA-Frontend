@@ -1,0 +1,472 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light;
+    color: #333;
+    background-color: #F8F8F8;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Removed conflicting global button styles that were causing dark backgrounds */
+
+/* Removed conflicting media query */
+
+@layer components {
+  /* NEIEA Custom Components */
+  .btn-primary {
+    @apply bg-ngo-color1 hover:bg-ngo-color5 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl !important;
+  }
+  
+  .btn-secondary {
+    @apply bg-ngo-color2 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-ngo-color1 text-ngo-color1 hover:bg-ngo-color1 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+
+  /* Admin Dashboard Button Overrides */
+  .admin-dashboard button:not([class*="bg-"]) {
+    @apply bg-white text-ngo-color1 border border-gray-300 hover:bg-ngo-color1 hover:text-white;
+  }
+  
+  .admin-dashboard .btn-primary {
+    @apply bg-ngo-color1 hover:bg-ngo-color1/90 text-white !important;
+  }
+  
+  .admin-dashboard .btn-secondary {
+    @apply bg-ngo-color2 hover:bg-ngo-color2/90 text-white !important;
+  }
+  
+  .card-neiea {
+    @apply bg-white rounded-xl shadow-soft border border-gray-100 overflow-hidden transition-shadow duration-300 hover:shadow-medium;
+  }
+  
+  .input-neiea {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-ngo-color1 focus:ring-2 focus:ring-ngo-color1/20 transition-all duration-300 bg-white text-gray-900;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-neiea {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-ngo-color1 to-ngo-color4 bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-neiea {
+    @apply bg-gradient-to-br from-ngo-color1 via-ngo-color3 to-ngo-color5;
+  }
+  
+  .hero-section {
+    @apply min-h-screen flex items-center justify-center bg-gradient-to-br from-ngo-color1 via-ngo-color3 to-ngo-color5 relative overflow-hidden;
+  }
+  
+  .stats-card {
+    @apply bg-white rounded-2xl shadow-medium p-8 text-center transition-transform duration-300 hover:scale-105 hover:shadow-strong;
+  }
+  
+  .course-card {
+    @apply bg-white rounded-xl shadow-soft border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-medium hover:-translate-y-2;
+  }
+  
+  .testimonial-card {
+    @apply bg-white rounded-2xl shadow-soft p-8 border border-gray-100 transition-all duration-300 hover:shadow-medium;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 hover:text-ngo-color1 font-medium transition-colors duration-300 relative;
+  }
+  
+  .nav-link.active {
+    @apply text-ngo-color1;
+  }
+  
+  .nav-link.active::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-ngo-color1;
+  }
+}
+
+@layer utilities {
+  /* Custom Utilities */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Custom Checkbox Styling - Higher Specificity */
+  button.custom-checkbox,
+  .custom-checkbox {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    border: 2px solid #6b7280 !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    background-image: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+  }
+
+  button.custom-checkbox:hover,
+  .custom-checkbox:hover {
+    border-color: #06038F !important;
+    background-color: white !important;
+  }
+
+  button.custom-checkbox[data-state="checked"],
+  .custom-checkbox[data-state="checked"] {
+    background-color: #06038F !important;
+    border-color: #06038F !important;
+    color: white !important;
+  }
+
+  button.custom-checkbox[data-state="checked"] svg,
+  .custom-checkbox[data-state="checked"] svg {
+    display: block !important;
+    color: white !important;
+    width: 14px !important;
+    height: 14px !important;
+    opacity: 1 !important;
+  }
+
+  button.custom-checkbox[data-state="unchecked"] svg,
+  .custom-checkbox[data-state="unchecked"] svg {
+    display: none !important;
+  }
+
+  /* Fallback for checkboxes that might not have data-state */
+  button.custom-checkbox[aria-checked="true"],
+  .custom-checkbox[aria-checked="true"] {
+    background-color: #06038F !important;
+    border-color: #06038F !important;
+    color: white !important;
+  }
+
+  button.custom-checkbox[aria-checked="true"] svg,
+  .custom-checkbox[aria-checked="true"] svg {
+    display: block !important;
+    color: white !important;
+    width: 14px !important;
+    height: 14px !important;
+    opacity: 1 !important;
+  }
+
+  button.custom-checkbox[aria-checked="false"] svg,
+  .custom-checkbox[aria-checked="false"] svg {
+    display: none !important;
+  }
+
+  /* Override any conflicting styles */
+  button.custom-checkbox *,
+  .custom-checkbox * {
+    pointer-events: none;
+  }
+
+  /* Custom Radio Button Styling - Higher Specificity */
+  button.custom-radio,
+  .custom-radio {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    border: 2px solid #6b7280 !important;
+    border-radius: 50% !important;
+    background-color: white !important;
+    background-image: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+  }
+
+  button.custom-radio:hover,
+  .custom-radio:hover {
+    border-color: #06038F !important;
+    background-color: white !important;
+  }
+
+  button.custom-radio[data-state="checked"],
+  .custom-radio[data-state="checked"] {
+    border-color: #06038F !important;
+    background-color: white !important;
+  }
+
+  button.custom-radio[data-state="checked"] svg,
+  .custom-radio[data-state="checked"] svg {
+    display: block !important;
+    color: #06038F !important;
+    width: 10px !important;
+    height: 10px !important;
+    opacity: 1 !important;
+  }
+
+  button.custom-radio[data-state="unchecked"] svg,
+  .custom-radio[data-state="unchecked"] svg {
+    display: none !important;
+  }
+
+  /* Fallback for radio buttons that might not have data-state */
+  button.custom-radio[aria-checked="true"],
+  .custom-radio[aria-checked="true"] {
+    border-color: #06038F !important;
+    background-color: white !important;
+  }
+
+  button.custom-radio[aria-checked="true"] svg,
+  .custom-radio[aria-checked="true"] svg {
+    display: block !important;
+    color: #06038F !important;
+    width: 10px !important;
+    height: 10px !important;
+    opacity: 1 !important;
+  }
+
+  button.custom-radio[aria-checked="false"] svg,
+  .custom-radio[aria-checked="false"] svg {
+    display: none !important;
+  }
+
+  /* Override any conflicting styles */
+  button.custom-radio *,
+  .custom-radio * {
+    pointer-events: none;
+  }
+
+  /* Force reset any potential conflicting styles */
+  [data-radix-collection-item].custom-checkbox,
+  [data-radix-collection-item].custom-radio {
+    all: unset !important;
+  }
+
+  /* Re-apply our custom styles after reset */
+  [data-radix-collection-item].custom-checkbox {
+    width: 18px !important;
+    height: 18px !important;
+    border: 2px solid #6b7280 !important;
+    border-radius: 4px !important;
+    background-color: white !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+  }
+
+  [data-radix-collection-item].custom-radio {
+    width: 18px !important;
+    height: 18px !important;
+    border: 2px solid #6b7280 !important;
+    border-radius: 50% !important;
+    background-color: white !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .animate-fade-in-down {
+    animation: fadeInDown 0.6s ease-out;
+  }
+  
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out;
+  }
+  
+  .animate-fade-in-right {
+    animation: fadeInRight 0.6s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+}
+
+/* Custom Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,397 @@
+/* Apply Course Institution Page Styling */
+
+/* Background and Layout */
+.apply-institution-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F3F4F6 0%, #ffffff 50%, #F3F4F6 100%);
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.apply-institution-page::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 400px;
+  height: 400px;
+  background: rgba(6, 3, 143, 0.05);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+}
+
+.apply-institution-page::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 103, 31, 0.05);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+}
+
+/* Main Content Container */
+.apply-institution-main-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Application Card */
+.institution-application-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Header Section */
+.institution-header {
+  background: linear-gradient(135deg, #06038F 0%, #3B82F6 50%, #1E40AF 100%);
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.institution-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.institution-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 16px;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.institution-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+/* Selected Courses Section */
+.selected-courses-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.selected-courses-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 24px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.selected-courses-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+}
+
+.selected-courses-info {
+  color: #6B7280;
+  font-size: 0.875rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 8px;
+}
+
+.selected-courses-info:last-child {
+  margin-bottom: 0;
+}
+
+.selected-courses-label {
+  font-weight: 600;
+  color: #1F2937;
+}
+
+/* Form Section */
+.institution-form-section {
+  padding: 32px;
+  background: white;
+}
+
+.institution-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 32px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.institution-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.institution-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.institution-form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.institution-form-input {
+  padding: 12px 16px;
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.institution-form-input:focus {
+  outline: none;
+  border-color: #06038F;
+  box-shadow: 0 0 0 3px rgba(6, 3, 143, 0.1);
+}
+
+.institution-form-select {
+  padding: 12px 16px;
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  background: white;
+  cursor: pointer;
+}
+
+.institution-form-select:focus {
+  outline: none;
+  border-color: #06038F;
+  box-shadow: 0 0 0 3px rgba(6, 3, 143, 0.1);
+}
+
+.institution-form-textarea {
+  padding: 12px 16px;
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  background: white;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.institution-form-textarea:focus {
+  outline: none;
+  border-color: #06038F;
+  box-shadow: 0 0 0 3px rgba(6, 3, 143, 0.1);
+}
+
+.institution-form-file {
+  padding: 12px 16px;
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  background: white;
+  cursor: pointer;
+}
+
+.institution-form-file:focus {
+  outline: none;
+  border-color: #06038F;
+  box-shadow: 0 0 0 3px rgba(6, 3, 143, 0.1);
+}
+
+.institution-form-error {
+  color: #EF4444;
+  font-size: 0.75rem;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 4px;
+}
+
+/* Time Slots Section */
+.time-slots-section {
+  grid-column: 1 / -1;
+}
+
+.time-slots-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.time-slot-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.time-slot-item:hover {
+  background: #F3F4F6;
+  border-color: #D1D5DB;
+}
+
+.time-slot-input {
+  width: 16px;
+  height: 16px;
+  accent-color: #06038F;
+}
+
+.time-slot-label {
+  font-size: 0.875rem;
+  color: #374151;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.institution-submit-button {
+  background: linear-gradient(135deg, #FF671F 0%, #FF8C42 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(255, 103, 31, 0.3);
+}
+
+.institution-submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 103, 31, 0.4);
+}
+
+.institution-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* File Upload Styling */
+.file-upload-container {
+  position: relative;
+}
+
+.file-upload-label {
+  display: block;
+  padding: 12px 16px;
+  border: 2px dashed #D1D5DB;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #F9FAFB;
+}
+
+.file-upload-label:hover {
+  border-color: #06038F;
+  background: rgba(6, 3, 143, 0.05);
+}
+
+.file-upload-text {
+  color: #6B7280;
+  font-size: 0.875rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.file-upload-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .apply-institution-main-content {
+    padding: 40px 16px;
+  }
+  
+  .institution-header {
+    padding: 32px 20px;
+  }
+  
+  .institution-title {
+    font-size: 2rem;
+  }
+  
+  .selected-courses-section,
+  .institution-form-section {
+    padding: 24px 20px;
+  }
+  
+  .institution-form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .time-slots-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .institution-title {
+    font-size: 1.75rem;
+  }
+  
+  .institution-subtitle {
+    font-size: 1rem;
+  }
+  
+  .selected-courses-title,
+  .institution-form-title {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,146 @@
+/* INDIA SPORA STYLE NAVIGATION - CLEAN AND SIMPLE */
+
+/* Reset all dropdown states */
+.dropdown-menu {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  position: absolute;
+  z-index: 1000;
+  margin-top: 0.125rem;
+  display: none;
+}
+
+/* Show dropdown on hover - SIMPLE APPROACH */
+.nav-item.dropdown:hover > .dropdown-menu {
+  display: block !important;
+}
+
+/* Dropdown items styling */
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+/* Hover state for dropdown items */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: #06038F;
+  background-color: #f8f9fa;
+}
+
+/* Current page item styling - BLUE BACKGROUND */
+.dropdown-item.current-page-item {
+  background-color: #06038F !important;
+  color: #fff !important;
+}
+
+/* Current page item hover - LIGHT BACKGROUND */
+.dropdown-item.current-page-item:hover,
+.dropdown-item.current-page-item:focus {
+  background-color: #f8f9fa !important;
+  color: #06038F !important;
+}
+
+/* Submenu positioning - SIMPLE */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem;
+  margin-left: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
+  z-index: 1001;
+  display: none;
+}
+
+/* Show submenu on hover */
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block !important;
+}
+
+/* Submenu arrow */
+.dropdown-submenu > .dropdown-item {
+  position: relative;
+  padding-right: 2.5rem;
+}
+
+.dropdown-submenu > .dropdown-item::after {
+  content: "›";
+  position: absolute;
+  right: 1rem;
+  font-size: 0.8rem;
+}
+
+/* REMOVE ALL COMPLEX ACTIVE STATES - KEEP IT SIMPLE */
+.dropdown-submenu.activechild {
+  /* NO SPECIAL STYLING */
+}
+
+.dropdown-submenu.activechild > a {
+  /* NO SPECIAL STYLING */
+}
+
+/* Navigation link styling */
+.nav-link {
+  transition: color 0.15s ease-in-out;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #06038F !important;
+}
+
+/* Dropdown toggle arrow */
+.dropdown-toggle::after {
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+/* Mobile responsive */
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    position: static;
+    display: none;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  .dropdown-submenu .dropdown-menu {
+    position: static;
+    margin-left: 0;
+  }
+}

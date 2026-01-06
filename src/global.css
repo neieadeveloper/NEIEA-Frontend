@@ -1,0 +1,45 @@
+/* ===========================
+   🌍 LOCKED GLOBAL TYPOGRAPHY
+   =========================== */
+
+:root {
+  --font-family: 'Roboto', sans-serif;
+  --text-color: #000000;
+  /* --heading-color: #06038f; */
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family) !important;
+  /* color: var(--heading-color) !important; */
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+.navbar>.container,
+.navbar>.container-fluid,
+.navbar>.container-lg,
+.navbar>.container-md,
+.navbar>.container-sm,
+.navbar>.container-xl,
+.navbar>.container-xxl {
+  flex-wrap: nowrap !important;
+}
+
+.input-group{
+  flex-wrap: nowrap;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.3rem !important;
+  line-height: 32px !important;
+  /* color: var(--text-color) !important; */
+  margin-bottom: 1rem !important;
+  letter-spacing: -0.02em !important;
+}
