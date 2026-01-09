@@ -3,7 +3,7 @@
         _id: "68908933c59a0fcba7e46e11",
         title: "English Foundational Course",
         description: "Foundational English is a meticulously designed course that caters specifically to students who have no prior knowledge of the English language. Understanding the challenges faced by beginners, this course provides a supportive and engaging learning environment. The curriculum is crafted to ensure that students build a strong foundation in English through incremental learning, starting with the most basic concepts and gradually advancing to more complex language skills.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754549964244-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754549964244-courseImage.jpeg",
         level: "beginner",
         duration: "3 months",
         targetAudience: [
@@ -46,7 +46,7 @@
         _id: "689089b2c59a0fcba7e46e19",
         title: "English Beginners Course",
         description: "Our Beginner's English course is thoughtfully designed for individuals with elementary knowledge of reading and writing in English. Recognizing the challenges beginners face, this course provides a supportive and engaging learning environment. The curriculum is structured to ensure gradual progression from fundamental concepts to more advanced language skills.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550139517-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550139517-courseImage.jpeg",
         level: "beginner",
         duration: "3 months",
         targetAudience: [
@@ -74,7 +74,7 @@
         _id: "689089f7c59a0fcba7e46e1d",
         title: "English Proficiency Course",
         description: "The English Proficiency Course for teachers is tailored to meet the needs of individuals who have partial exposure to English. It is specifically designed to enhance participants' skills in reading, writing, speaking, and listening. The course aims to cultivate proficiency in the English language, equipping participants to communicate effectively and comprehend English in diverse real-life scenarios.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550336303-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550336303-courseImage.jpeg",
         level: "intermediate",
         duration: "3 months",
         targetAudience: [
@@ -100,7 +100,7 @@
         _id: "68921311daedab5af06624b6",
         title: "Math Elementary School course",
         description: "This course introduces foundational mathematical concepts to students. It focuses on developing basic numeracy skills, problem-solving abilities, and an understanding of numbers, operations, shapes, and measurements. The course emphasizes interactive and practical applications of math in everyday life, catering to marginalized students who might lack access to traditional schooling.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550507901-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550507901-courseImage.jpeg",
         level: "beginner",
         duration: "6 months",
         targetAudience: [
@@ -122,7 +122,7 @@
         _id: "6892150e71ed0277c789b728",
         title: "Math Middle School Course",
         description: "This course builds on foundational math skills and introduces intermediate-level concepts. It focuses on fractions, decimals, geometry, data handling, and basic algebraic thinking. The curriculum is designed to provide students with problem-solving strategies and the ability to apply mathematical concepts in their daily lives.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550630557-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550630557-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -144,7 +144,7 @@
         _id: "6892156171ed0277c789b72c",
         title: "Google Workspace Beginner's Level",
         description: "This 45-day intensive program is meticulously designed to transform complete beginners into confident Google Workspace users. The course offers a structured, hands-on approach to mastering essential tools like Gmail, Docs, Sheets, Slides, and Drive, with a focus on practical applications and real-world digital collaboration scenarios.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550759679-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550759679-courseImage.jpeg",
         level: "beginner",
         duration: "45 Days",
         targetAudience: [
@@ -169,7 +169,7 @@
         _id: "689215c59230ef585293fbb4",
         title: "Maths High School course",
         description: "This advanced course prepares students for higher-level math concepts such as algebra, geometry, and statistics. It emphasizes critical thinking, problem-solving, and the application of mathematics in academic and real-life scenarios.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550932985-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550932985-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -191,7 +191,7 @@
         _id: "6892161f9230ef585293fbc9",
         title: "Microsoft Office Beginners Course",
         description: "This 45-day intensive program is meticulously designed to transform complete beginners into confident Microsoft Office professionals. The course provides a structured, hands-on approach to mastering essential productivity software skills, focusing on practical applications and real-world scenarios.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551102942-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551102942-courseImage.jpeg",
         level: "beginner",
         duration: "45 Days",
         targetAudience: [
@@ -224,7 +224,7 @@
         _id: "689217b018596aebe3c97564",
         title: "Teachers Training Course",
         description: "To enhance teachers’ pedagogical, technological, and classroom management skills across subjects, with an emphasis on Communicative English, Discourse-Oriented Pedagogy, and Socio-Emotional Learning, empowering them to foster student-centered learning environments.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551302542-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551302542-courseImage.jpeg",
         level: "intermediate",
         duration: "3 Months",
         targetAudience: [
@@ -246,7 +246,7 @@
         _id: "6892191e18596aebe3c9757a",
         title: "Science Elementary School Course",
         description: "This program is designed for very young learners and covers the fundamental skills and knowledge taught in the first three years of primary school. The curriculum would include basic concepts of environmental Science.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551425979-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551425979-courseImage.jpeg",
         level: "beginner",
         duration: "6 months",
         targetAudience: [
@@ -268,7 +268,7 @@
         _id: "68921a1addd5a23546c443c1",
         title: "Science Middle School Course",
         description: "This program targets students in the middle primary grades. The Science subject covered would be more advanced and build upon the foundational skills, including more complex science concepts.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551546586-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551546586-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -290,7 +290,7 @@
         _id: "68921ac3a12d03fdae5f2775",
         title: "Science High School Course",
         description: "This level is for students in the upper primary or high school years. The curriculum would introduce science subject in more detail preparing students for secondary education.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551731672-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551731672-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -312,7 +312,7 @@
         _id: "68921e0618ca56b5e3bb230c",
         title: "Science Secondary High School Course",
         description: "This level is for students in the secondary stage of education, typically in Class 9. The curriculum builds on the foundational knowledge from earlier years and introduces more structured and in-depth study of subject Science. At this stage, students develop analytical thinking, problem-solving skills, and subject-specific understanding in preparation for the Class 10 board examinations and higher secondary education.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754552007358-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754552007358-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -334,7 +334,7 @@
         _id: "68921fa6195ef72ada0cdd44",
         title: "NIOS OBE Level A (Equivalent to Classes 1–3)",
         description: "NIOS OBE Level A is designed for beginners at the primary level (Classes 1–3 equivalent). The course focuses on building strong foundational skills in literacy, numeracy, and environmental awareness. Along with core subjects, NEIEA also offers basic computer education to help learners become familiar with digital tools at an early stage. The program uses simple, activity-based methods to make learning engaging and accessible.\nSubjects:\nEnglish\nMaths\nEVS\nComputers (Basic Digital Skills)",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754571722912-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754571722912-courseImage.jpeg",
         level: "beginner",
         duration: "6 months",
         targetAudience: [
@@ -356,7 +356,7 @@
         _id: "68921fec195ef72ada0cdd48",
         title: "NIOS OBE Level C (Equivalent to Classes 6–8)",
         description: "NIOS OBE Level C is meant for learners at the middle school level, equivalent to Classes 6–8. It strengthens core academic skills and prepares learners for secondary education or vocational paths. NEIEA includes computer education to promote digital literacy and practical skills for real-life applications.\n\nSubjects Offered:\nEnglish\nMathematics\nEVS\nSocial Studies\nData Entry",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754571889390-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754571889390-courseImage.jpeg",
         level: "beginner",
         duration: "1 Year",
         targetAudience: [
@@ -381,7 +381,7 @@
         _id: "68922061195ef72ada0cdd4f",
         title: "NIOS OBE Level B (Equivalent to Classes 4–5)",
         description: "NIOS OBE Level B is meant for learners at the upper primary stage, equivalent to Classes 4 and 5. This level enhances literacy, numeracy, and awareness of the environment and society. NEIEA includes basic computer education to introduce learners to essential digital skills. The course aims to prepare learners for Level C or mainstream formal education using interactive, learner-friendly methods.\nSubjects Offered:\nEnglish\nMath\nEnvironmental Studies (EVS)\nComputers (Basic Digital Skills)",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754572173134-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754572173134-courseImage.jpeg",
         level: "beginner",
         duration: "1 Year",
         targetAudience: [
@@ -403,7 +403,7 @@
         _id: "689221e0195ef72ada0cdd5c",
         title: "NIOS Xth Grade (Secondary Course)",
         description: "The NIOS Secondary Course is equivalent to Class 10 in the formal education system. It is designed for learners who wish to complete their secondary education through a flexible, learner-centric approach. This program empowers students with essential academic and practical knowledge, preparing them for higher studies, vocational training, or employment opportunities.\nEnglish\nMath\nScience\nHome Science\nSocial Science\nData Entry",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754572257625-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754572257625-courseImage.jpeg",
         level: "beginner",
         duration: "1 Years",
         targetAudience: [
@@ -422,7 +422,7 @@
         _id: "6892222d195ef72ada0cdd70",
         title: "Maths Secondary High School Course",
         description: "This level is for students in the secondary stage of education, typically in Class 9. The curriculum builds on the foundational knowledge from earlier years and introduces more structured and in-depth study of subject Maths. At this stage, students develop analytical thinking, problem-solving skills, and subject-specific understanding in preparation for the Class 10 board examinations and higher secondary education.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754572428449-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754572428449-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -444,7 +444,7 @@
         _id: "68a569fd1ff97e6f7562cd5f",
         title: "Beginner Level MS Office and Canva",
         description: "This 45-day training program equips learners with practical skills in MS Office (Word, Excel, PowerPoint) and Canva. Participants will learn document formatting, data analysis with spreadsheets, charts, formulas, and creating professional presentations. The Canva module will cover designing posters, social media posts, and presentations. By the end, learners will confidently manage documents, collaborate online, and create impactful designs for academic, professional, and personal use.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1755671035973-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1755671035973-courseImage.jpeg",
         level: "beginner",
         duration: "45 days",
         targetAudience: [
@@ -466,7 +466,7 @@
         _id: "68a56a8e1ff97e6f7562cd63",
         title: "Beginner Level Google Workspace and Canva",
         description: "This 45-day program helps learners master essential digital tools. It covers Google Workspace (Docs, Sheets, Slides, Drive, Forms, Gmail, Meet) for collaboration, file management, and communication. Learners will also gain Canva skills to design posters, presentations, and social media posts. By the end, participants will confidently manage documents, work online in real time, and create professional, creative designs for academic, professional, and personal use.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1755671180884-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1755671180884-courseImage.jpeg",
         level: "beginner",
         duration: "45 days",
         targetAudience: [

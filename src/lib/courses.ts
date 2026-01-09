@@ -23,7 +23,7 @@ export const courses = [
         targetAudience: [
             "This course is ideal for beginners, including learners who are above 7 years may enroll in the course."
         ],
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754549964244-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754549964244-courseImage.jpeg",
         fees: 300,
         whatsappLink: "https://chat.whatsapp.com/HkT4zeg1o709sMm2eHYk7K",
         timeSlots: ["9:00 PM - 10:00 PM"],
@@ -34,7 +34,7 @@ export const courses = [
         id: 2,
         title: "English Beginners Course",
         description: "Our Beginner's English course is thoughtfully designed for individuals with elementary knowledge of reading and writing in English. Recognizing the challenges beginners face, this course provides a supportive and engaging learning environment. The curriculum is structured to ensure gradual progression from fundamental concepts to more advanced language skills.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550139517-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550139517-courseImage.jpeg",
         level: "beginner",
         duration: "3 months",
         targetAudience: [
@@ -54,7 +54,7 @@ export const courses = [
         id: 3,
         title: "English Proficiency Course",
         description: "The English Proficiency Course for teachers is tailored to meet the needs of individuals who have partial exposure to English. It is specifically designed to enhance participants' skills in reading, writing, speaking, and listening. The course aims to cultivate proficiency in the English language, equipping participants to communicate effectively and comprehend English in diverse real-life scenarios.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550336303-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550336303-courseImage.jpeg",
         level: "intermediate",
         duration: "3 months",
         targetAudience: [
@@ -73,7 +73,7 @@ export const courses = [
         id: 4,
         title: "Math Elementary School Course",
         description: "This course introduces foundational mathematical concepts to students. It focuses on developing basic numeracy skills, problem-solving abilities, and an understanding of numbers, operations, shapes, and measurements. The course emphasizes interactive and practical applications of math in everyday life, catering to marginalized students who might lack access to traditional schooling.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550507901-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550507901-courseImage.jpeg",
         level: "beginner",
         duration: "6 months",
         targetAudience: [
@@ -92,7 +92,7 @@ export const courses = [
         id: 5,
         title: "Math Middle School Course",
         description: "This course builds on foundational math skills and introduces intermediate-level concepts. It focuses on fractions, decimals, geometry, data handling, and basic algebraic thinking. The curriculum is designed to provide students with problem-solving strategies and the ability to apply mathematical concepts in their daily lives.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550630557-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550630557-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -111,7 +111,7 @@ export const courses = [
         id: 6,
         title: "Math High School Course",
         description: "This advanced course prepares students for higher-level math concepts such as algebra, geometry, and statistics. It emphasizes critical thinking, problem-solving, and the application of mathematics in academic and real-life scenarios.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754550932985-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754550932985-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -130,7 +130,7 @@ export const courses = [
         id: 7,
         title: "Science Elementary School Course",
         description: "This program is designed for very young learners and covers the fundamental skills and knowledge taught in the first three years of primary school. The curriculum would include basic concepts of environmental Science.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551425979-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551425979-courseImage.jpeg",
         level: "beginner",
         duration: "6 months",
         targetAudience: [
@@ -149,7 +149,7 @@ export const courses = [
         id: 8,
         title: "Science Middle School Course",
         description: "This program targets students in the middle primary grades. The Science subject covered would be more advanced and build upon the foundational skills, including more complex science concepts.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551546586-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551546586-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -168,7 +168,7 @@ export const courses = [
         id: 9,
         title: "Science High School Course",
         description: "This level is for students in the upper primary or high school years. The curriculum would introduce science subject in more detail preparing students for secondary education.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754551731672-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754551731672-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -187,7 +187,7 @@ export const courses = [
         id: 10,
         title: "Science Secondary High School Course",
         description: "This level is for students in the secondary stage of education, typically in Class 9. The curriculum builds on the foundational knowledge from earlier years and introduces more structured and in-depth study of subject Science. At this stage, students develop analytical thinking, problem-solving skills, and subject-specific understanding in preparation for the Class 10 board examinations and higher secondary education.",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754552007358-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754552007358-courseImage.jpeg",
         level: "intermediate",
         duration: "6 months",
         targetAudience: [
@@ -276,7 +276,7 @@ export const courses = [
         id: 17,
         title: "NIOS OBE Level A (Equivalent to Classes 1–3)",
         description: "NIOS OBE Level A is designed for beginners at the primary level (Classes 1–3 equivalent). The course focuses on building strong foundational skills in literacy, numeracy, and environmental awareness. Along with core subjects, NEIEA also offers basic computer education to help learners become familiar with digital tools at an early stage. The program uses simple, activity-based methods to make learning engaging and accessible.\nSubjects:\nEnglish\nMaths\nEVS\nComputers (Basic Digital Skills)",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754571722912-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754571722912-courseImage.jpeg",
         level: "beginner",
         duration: "6 months",
         targetAudience: [
@@ -295,7 +295,7 @@ export const courses = [
         id: 18,
         title: "NIOS OBE Level B (Equivalent to Classes 4–5)",
         description: "NIOS OBE Level B is meant for learners at the upper primary stage, equivalent to Classes 4 and 5. This level enhances literacy, numeracy, and awareness of the environment and society. NEIEA includes basic computer education to introduce learners to essential digital skills. The course aims to prepare learners for Level C or mainstream formal education using interactive, learner-friendly methods.\nSubjects Offered:\nEnglish\nMath\nEnvironmental Studies (EVS)\nComputers (Basic Digital Skills)",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754572173134-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754572173134-courseImage.jpeg",
         duration: "1 Year",
         level: "beginner",
         targetAudience: [
@@ -314,7 +314,7 @@ export const courses = [
         id: 19,
         title: "NIOS OBE Level C (Equivalent to Classes 6–8)",
         description: "NIOS OBE Level C is meant for learners at the middle school level, equivalent to Classes 6–8. It strengthens core academic skills and prepares learners for secondary education or vocational paths. NEIEA includes computer education to promote digital literacy and practical skills for real-life applications.\n\nSubjects Offered:\nEnglish\nMathematics\nEVS\nSocial Studies\nData Entry",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754571889390-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754571889390-courseImage.jpeg",
         duration: "1 Year",
         level: "beginner",
         targetAudience: [
@@ -333,7 +333,7 @@ export const courses = [
         id: 20,
         title: "NIOS Xth Grade (Secondary Course)",
         description: "The NIOS Secondary Course is equivalent to Class 10 in the formal education system. It is designed for learners who wish to complete their secondary education through a flexible, learner-centric approach. This program empowers students with essential academic and practical knowledge, preparing them for higher studies, vocational training, or employment opportunities.\nEnglish\nMath\nScience\nHome Science\nSocial Science\nData Entry",
-        imageUrl: "https://neiea-ngo.s3.ap-south-1.amazonaws.com/courses/1754572257625-courseImage.jpeg",
+        imageUrl: "https://neiea.s3.ap-south-1.amazonaws.com/courses/1754572257625-courseImage.jpeg",
         duration: "1 Years",
         level: "beginner",
         targetAudience: [
