@@ -60,6 +60,7 @@ import Courses from './pages/Courses';
 import ApplyCourse from './pages/ApplyCourse';
 import ApplyCourseInstitution from './pages/ApplyCourseInstitution';
 import AdminDashboard from './pages/dashboards/adminDashboard/AdminDashboard';
+import DonorDashboard from './pages/dashboards/donorDashboard/DonorDashboard';
 import EditCoursePage from './pages/dashboards/adminDashboard/EditCoursePage';
 import ScrollToTop from './utils/ScrollToTop';
 import BeAPartner from './pages/BeAPartner.jsx';
@@ -186,6 +187,7 @@ function AppContent() {
           <Route path="/career" element={<CareerDynamic />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/donation/form" element={<DonationForm />} />
+          <Route path="/donor/dashboard" element={<DonorDashboard />} />
           {/* <Route path="/donation/be-partner" element={<BeAPartner />} /> */}
           <Route path="/donation/be-partner" element={<BeAPartnerDynamic />} />
           <Route path="/courses/:category" element={<Courses />} />

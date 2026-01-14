@@ -282,11 +282,11 @@ const Donate = () => {
                   <div style={{
                     backgroundColor: '#F3F4F6',
                     borderRadius: '16px',
-                    padding: '6px',
+                    padding: '8px',
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
-                    gap: '4px'
+                    gap: '6px'
                   }}>
                     {(["once", "monthly", "quarterly", "annually"] as const).map((type) => (
                       <button
@@ -672,7 +672,7 @@ const Donate = () => {
                   {selectedTier ? (
                     <>
                       Become {selectedTier.split(" ")[0]} Donor
-                      <Heart size={24} />
+                      {/* <Heart size={24} /> */}
                     </>
                   ) : (
                     <>
@@ -680,7 +680,7 @@ const Donate = () => {
                       {donationType === "monthly" && " Monthly"}
                       {donationType === "quarterly" && " Quarterly"}
                       {donationType === "annually" && " Annually"}
-                      <Heart size={24} />
+                      {/* <Heart size={24} /> */}
                     </>
                   )}
                 </Button>

@@ -33,8 +33,8 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
   country: z.string().min(1, "Country is required"),
   phone: z.string()
-    .min(10, "Phone number must be at least 10 digits")
-    .regex(/^\d{10,15}$/, "Invalid phone number format"),
+    .length(10, "Phone number must be exactly 10 digits")
+    .regex(/^\d{10}$/, "Invalid phone number format"),
   motherTongue: z.string().min(1, "Mother Tongue is required"),
   age: z.string().min(1, "Age is required"),
   gender: z.string().min(1, "Gender is required"),
@@ -44,8 +44,8 @@ const formSchema = z.object({
   city: z.string().optional().or(z.literal("")),
   address: z.string().optional().or(z.literal("")),
   whatsappNumber: z.string()
-    .min(10, "WhatsApp number must be at least 10 digits")
-    .regex(/^\d{10,15}$/, "Invalid WhatsApp number format"),
+    .length(10, "WhatsApp number must be exactly 10 digits")
+    .regex(/^\d{10}$/, "Invalid WhatsApp number format"),
   referredBy: z.string().min(1, "Referred By is required"),
   convenientTimeSlot: z.string().min(1, "Convenient Time Slot is required"),
   message: z.string().optional().or(z.literal("")),
@@ -418,6 +418,10 @@ const ApplyCourse = () => {
                         {...register("phone")}
                         placeholder={country === "India" ? "10 digit number" : "Local number"}
                         className="form-input phone-input"
+                        maxLength={10}
+                        onInput={(e: any) => {
+                          e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+                        }}
                       />
                     </div>
                     {errors.phone && <p className="form-error">{errors.phone.message}</p>}
@@ -555,6 +559,10 @@ const ApplyCourse = () => {
                         {...register("whatsappNumber")}
                         placeholder={country === "India" ? "10 digit number" : "Local number"}
                         className="form-input phone-input"
+                        maxLength={10}
+                        onInput={(e: any) => {
+                          e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+                        }}
                       />
                     </div>
                     {errors.whatsappNumber && <p className="form-error">{errors.whatsappNumber.message}</p>}
