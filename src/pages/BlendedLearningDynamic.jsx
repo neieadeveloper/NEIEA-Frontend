@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate';
 import axiosInstance from '../lib/axiosInstance';
+import './BlendedLearningDynamic.css';
 
 const BlendedLearningDynamic = () => {
   const [pageData, setPageData] = useState({
@@ -71,34 +72,20 @@ const BlendedLearningDynamic = () => {
       <div className="container">
         <div className="row mb-5 align-items-center">
           <div className="col-md-6">
-            <h2
-              style={{
-                fontSize: "32px",
-                fontWeight: "700",
-                color: "#212529",
-                marginBottom: "25px",
-                textAlign: "left"
-              }}
-            >
+            <h2 className="blended-learning-title">
               {pageData.overviewSection.title}
             </h2>
             <div
-              style={{
-                fontSize: "20px",
-                lineHeight: "1.8",
-                color: "#00000",
-                textAlign: "justify"
-              }}
+              className="blended-learning-content"
               dangerouslySetInnerHTML={{ __html: pageData.overviewSection.description.replace(/\n\n/g, '</p><p style="margin-bottom: 20px;">') }}
             />
           </div>
 
-          <div className="col-md-6 text-center">
+          <div className="col-md-6 blended-learning-image-container">
             <img
               src={pageData.overviewSection.supportingImage}
               alt="Blended Learning Model"
-              className="img-fluid"
-              style={{ maxWidth: "100%", height: "auto", borderRadius: "10px" }}
+              className="img-fluid blended-learning-image"
             />
           </div>
         </div>

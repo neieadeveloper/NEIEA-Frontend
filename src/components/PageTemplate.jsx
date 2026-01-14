@@ -85,7 +85,7 @@ const PageTemplate = ({
             </nav>
           </div> */}
           
-          <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "60px", paddingBottom: "80px" }}>
+          <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "60px", paddingBottom: "60px" }}>
             <div className="row align-items-center">
               <div className="col-lg-8">
                 <h1

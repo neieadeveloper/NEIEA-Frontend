@@ -7,7 +7,7 @@ const ImageSlideshow = ({ images, initialIndex = 0, onClose }) => {
 
   // Navigate to previous image
   const goToPrevious = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
     setIsZoomed(false);
@@ -15,7 +15,7 @@ const ImageSlideshow = ({ images, initialIndex = 0, onClose }) => {
 
   // Navigate to next image
   const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
     setIsZoomed(false);
@@ -51,6 +51,15 @@ const ImageSlideshow = ({ images, initialIndex = 0, onClose }) => {
     };
   }, []);
 
+  // Auto-play slideshow
+  useEffect(() => {
+    const autoPlayInterval = setInterval(() => {
+      goToNext();
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(autoPlayInterval);
+  }, [goToNext]);
+
   if (!images || images.length === 0) return null;
 
   const currentImage = images[currentIndex];
@@ -59,8 +68,8 @@ const ImageSlideshow = ({ images, initialIndex = 0, onClose }) => {
     <div className="slideshow-overlay" onClick={onClose}>
       <div className="slideshow-container" onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
-        <button 
-          className="slideshow-close" 
+        <button
+          className="slideshow-close"
           onClick={onClose}
           aria-label="Close slideshow"
           title="Close (Esc)"
@@ -70,8 +79,8 @@ const ImageSlideshow = ({ images, initialIndex = 0, onClose }) => {
 
         {/* Previous Button */}
         {images.length > 1 && (
-          <button 
-            className="slideshow-nav slideshow-nav-prev" 
+          <button
+            className="slideshow-nav slideshow-nav-prev"
             onClick={goToPrevious}
             aria-label="Previous image"
             title="Previous (←)"
@@ -92,8 +101,8 @@ const ImageSlideshow = ({ images, initialIndex = 0, onClose }) => {
 
         {/* Next Button */}
         {images.length > 1 && (
-          <button 
-            className="slideshow-nav slideshow-nav-next" 
+          <button
+            className="slideshow-nav slideshow-nav-next"
             onClick={goToNext}
             aria-label="Next image"
             title="Next (→)"

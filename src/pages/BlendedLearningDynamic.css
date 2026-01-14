@@ -1,0 +1,100 @@
+/* Blended Learning Page Styles */
+
+/* Base Styles (Desktop) */
+.blended-learning-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #212529;
+    margin: 1.5rem 0;
+    text-align: left;
+    line-height: 1.3;
+    font-family: 'Roboto', sans-serif;
+}
+
+.blended-learning-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #000000;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+
+.blended-learning-content p {
+    margin-bottom: 1.25rem;
+}
+
+.blended-learning-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blended-learning-image:hover {
+    transform: scale(1.02);
+}
+
+.blended-learning-image-container {
+    text-align: center;
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+    .blended-learning-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+        text-align: center;
+    }
+
+    .blended-learning-content {
+        font-size: 1rem;
+        text-align: left;
+        line-height: 1.7;
+    }
+
+    .blended-learning-image-container {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .blended-learning-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .blended-learning-content {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .blended-learning-content p {
+        margin-bottom: 1rem;
+    }
+
+    .blended-learning-image {
+        border-radius: 8px;
+    }
+
+    .blended-learning-image-container {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 375px) {
+    .blended-learning-title {
+        font-size: 1.35rem;
+    }
+
+    .blended-learning-content {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}

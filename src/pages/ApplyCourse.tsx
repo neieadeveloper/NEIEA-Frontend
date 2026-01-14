@@ -341,18 +341,22 @@ const ApplyCourse = () => {
               <div className="course-details-grid">
                 <div className="course-detail-card">
                   <p className="course-detail-item">
-                    <span className="course-detail-label">Duration:</span> {course.duration}
+                    <span className="course-detail-label">Duration</span>
+                    <span className="course-detail-value">{course.duration}</span>
                   </p>
                   <p className="course-detail-item">
-                    <span className="course-detail-label">Fees:</span> {course.fees === 0 ? "Free" : `₹${course.fees}`}
+                    <span className="course-detail-label">Fees</span>
+                    <span className="course-detail-value">{course.fees === 0 ? "Free" : `₹${course.fees}`}</span>
                   </p>
                 </div>
                 <div className="course-detail-card">
                   <p className="course-detail-item">
-                    <span className="course-detail-label">Level:</span> {course.level}
+                    <span className="course-detail-label">Level</span>
+                    <span className="course-detail-value">{course.level}</span>
                   </p>
-                  <p className="course-detail-item">
-                    <span className="course-detail-label">Target Audience:</span> {course.targetAudience.join(', ')}
+                  <p className="course-detail-item target">
+                    <span className="course-detail-label">Target Audience</span>
+                    <span className="course-detail-value">{course.targetAudience.join(', ')}</span>
                   </p>
                 </div>
               </div>
