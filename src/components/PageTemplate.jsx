@@ -1,23 +1,42 @@
 import React from 'react';
 
-const PageTemplate = ({ 
-  breadcrumbPath, 
-  title, 
-  subtitle, 
-  description, 
+const PageTemplate = ({
+  breadcrumbPath,
+  title,
+  subtitle,
+  description,
   children,
   heroImage = null,
   heroVideoUrl = null,
   videoLink = null,
-  showHeroSection = true 
+  showHeroSection = true
 }) => {
   console.log('PageTemplate received heroVideoUrl:', heroVideoUrl);
+
+  const getYoutubeEmbedUrl = (url) => {
+    if (!url) return null;
+
+    // youtu.be links
+    if (url.includes("youtu.be")) {
+      const videoId = url.split("youtu.be/")[1].split("?")[0];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+
+    // youtube.com/watch?v= links
+    if (url.includes("youtube.com/watch")) {
+      const videoId = new URL(url).searchParams.get("v");
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+
+    return url; // fallback
+  };
+
   return (
     <div className="page-template">
       {/* Hero Section with Integrated Breadcrumb */}
       {showHeroSection && (
-        <section 
-          style={{ 
+        <section
+          style={{
             background: "linear-gradient(96.15deg, rgba(6, 3, 143, 0.8) 13.5%, rgba(255, 103, 31, 0.8) 83.46%)",
             padding: "0",
             position: "relative",
@@ -25,7 +44,7 @@ const PageTemplate = ({
           }}
         >
           {/* Optional overlay for better text readability */}
-          <div 
+          <div
             style={{
               position: "absolute",
               top: 0,
@@ -36,7 +55,7 @@ const PageTemplate = ({
               zIndex: 1
             }}
           ></div>
-          
+
           {/* Breadcrumb integrated in gradient background */}
           {/* <div className="container" style={{ position: "relative", zIndex: 2 }}>
             <nav aria-label="breadcrumb" style={{ paddingTop: "15px", paddingBottom: "0" }}>
@@ -84,7 +103,7 @@ const PageTemplate = ({
               </ol>
             </nav>
           </div> */}
-          
+
           <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "60px", paddingBottom: "60px" }}>
             <div className="row align-items-center">
               <div className="col-lg-8">
@@ -136,7 +155,7 @@ const PageTemplate = ({
                       <iframe
                         width="100%"
                         height="300"
-                        src={heroVideoUrl}
+                        src={getYoutubeEmbedUrl(heroVideoUrl)}
                         title={title}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -188,8 +207,8 @@ const PageTemplate = ({
                       src={heroImage}
                       alt={title}
                       className="img-fluid rounded-3 shadow-lg"
-                      style={{ 
-                        maxHeight: "300px", 
+                      style={{
+                        maxHeight: "300px",
                         objectFit: "cover",
                         border: "3px solid rgba(255,255,255,0.2)",
                         boxShadow: "0 8px 32px rgba(0,0,0,0.3)"
