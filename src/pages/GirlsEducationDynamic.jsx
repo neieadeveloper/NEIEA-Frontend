@@ -37,26 +37,27 @@ const GirlsEducation = () => {
       subtitle={data.heroSection?.subtitle}
       description={data.heroSection?.description}
       heroImage={data.heroSection?.heroImage || '/assets/images/GirlsEducation/image1.png'}
-      videoLink={data.heroSection?.videoLink || null}
+      // videoLink={data.heroSection?.videoLink || null}
+      heroVideoUrl={data.heroSection?.videoLink || null}
     >
       {/* Vision and Philosophy */}
       <div className="row mb-5">
         <div className="col-lg-10 mx-auto">
           <div className="text-center" style={{ padding: "40px 20px" }}>
-            <h2 
-              style={{ 
-                fontSize: "32px", 
-                fontWeight: "700", 
+            <h2
+              style={{
+                fontSize: "32px",
+                fontWeight: "700",
                 marginBottom: "25px",
                 color: "#212529"
               }}
             >
               {data.visionAndPhilosophySection?.heading}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                lineHeight: "1.8", 
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.8",
                 marginBottom: "0",
                 color: "#00000"
               }}
@@ -71,10 +72,10 @@ const GirlsEducation = () => {
       {(data.visionAndPhilosophySection?.philosophyHeading || data.visionAndPhilosophySection?.philosophyDescription) && (
         <div className="row mb-5">
           <div className="col-lg-8 mx-auto">
-            <div 
+            <div
               className="card border-0"
-              style={{ 
-                borderRadius: "8px", 
+              style={{
+                borderRadius: "8px",
                 padding: "40px",
                 backgroundColor: "white",
                 border: "1px solid #e9ecef"
@@ -82,10 +83,10 @@ const GirlsEducation = () => {
             >
               <div className="text-center">
                 {data.visionAndPhilosophySection?.philosophyHeading && (
-                  <h4 
-                    style={{ 
-                      color: "#212529", 
-                      fontWeight: "700", 
+                  <h4
+                    style={{
+                      color: "#212529",
+                      fontWeight: "700",
                       marginBottom: "20px",
                       fontSize: "24px"
                     }}
@@ -94,10 +95,10 @@ const GirlsEducation = () => {
                   </h4>
                 )}
                 {data.visionAndPhilosophySection?.philosophyDescription && (
-                  <p 
-                    style={{ 
-                      fontSize: "18px", 
-                      lineHeight: "1.8", 
+                  <p
+                    style={{
+                      fontSize: "18px",
+                      lineHeight: "1.8",
                       color: "#6c757d",
                       marginBottom: "0",
                       fontStyle: "italic"
@@ -116,7 +117,7 @@ const GirlsEducation = () => {
       <div className="row mb-5">
         <div className="col-12">
           <div className="text-center mb-5">
-            <h6 
+            <h6
               style={{
                 color: "#fd7e14",
                 fontSize: "14px",
@@ -128,21 +129,21 @@ const GirlsEducation = () => {
             >
               OUR INITIATIVES
             </h6>
-            <h2 
-              style={{ 
-                fontSize: "36px", 
-                fontWeight: "700", 
-                color: "#212529", 
+            <h2
+              style={{
+                fontSize: "36px",
+                fontWeight: "700",
+                color: "#212529",
                 marginBottom: "20px",
                 lineHeight: "1.3"
               }}
             >
               {data.initiativesSection?.heading}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                color: "#00000", 
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#00000",
                 maxWidth: "600px",
                 margin: "0 auto"
               }}
@@ -156,16 +157,16 @@ const GirlsEducation = () => {
       <div className="row g-4 mb-5">
         {(data.initiativesSection?.initiatives || []).map((initiative, idx) => (
           <div key={initiative.id} className="col-lg-6">
-            <div 
+            <div
               className="card h-100 border-0"
-              style={{ 
+              style={{
                 borderRadius: "8px",
                 backgroundColor: "white",
                 border: "1px solid #e9ecef"
               }}
             >
-              <div 
-                style={{ 
+              <div
+                style={{
                   backgroundColor: "#f8f9fa",
                   padding: "25px 30px",
                   color: "#00000",
@@ -173,8 +174,8 @@ const GirlsEducation = () => {
                 }}
               >
                 <div className="d-flex align-items-center justify-content-between mb-3">
-                  <div 
-                    style={{ 
+                  <div
+                    style={{
                       fontSize: "40px"
                     }}
                   >
@@ -186,27 +187,27 @@ const GirlsEducation = () => {
                     </div>
                   </div>
                 </div>
-                <h4 
-                  style={{ 
-                    color: "#00000", 
-                    fontWeight: "700", 
+                <h4
+                  style={{
+                    color: "#00000",
+                    fontWeight: "700",
                     marginBottom: "10px"
                   }}
                 >
                   {initiative.title}
                 </h4>
-                <p 
-                  style={{ 
-                    color: "#00000", 
+                <p
+                  style={{
+                    color: "#00000",
                     fontSize: "14px",
                     marginBottom: "5px"
                   }}
                 >
                   <strong>Partner:</strong> {initiative.partner}
                 </p>
-                <p 
-                  style={{ 
-                    color: "#00000", 
+                <p
+                  style={{
+                    color: "#00000",
                     fontSize: "14px",
                     marginBottom: "0"
                   }}
@@ -214,7 +215,7 @@ const GirlsEducation = () => {
                   <strong>Location:</strong> {initiative.location}
                 </p>
               </div>
-              
+
               <div className="card-body p-4">
                 <p style={{ color: "#00000", lineHeight: "1.6", marginBottom: "20px" }}>
                   {initiative.description}
@@ -225,7 +226,7 @@ const GirlsEducation = () => {
                   </h6>
                   <ul style={{ color: "#00000", paddingLeft: "20px", margin: "0", lineHeight: "1.6" }}>
                     {(initiative.achievements || []).map((achievement, index) => (
-                      <li key={index} style={{ marginBottom: "8px", fontSize: "14px", color:"#00000" }}>
+                      <li key={index} style={{ marginBottom: "8px", fontSize: "14px", color: "#00000" }}>
                         {achievement}
                       </li>
                     ))}
@@ -241,7 +242,7 @@ const GirlsEducation = () => {
       <div className="row mb-5">
         <div className="col-12">
           <div className="text-center mb-5">
-            <h6 
+            <h6
               style={{
                 color: "#00000",
                 fontSize: "14px",
@@ -253,11 +254,11 @@ const GirlsEducation = () => {
             >
               OUR IMPACT
             </h6>
-            <h2 
-              style={{ 
-                fontSize: "36px", 
-                fontWeight: "700", 
-                color: "#00000", 
+            <h2
+              style={{
+                fontSize: "36px",
+                fontWeight: "700",
+                color: "#00000",
                 marginBottom: "20px",
                 lineHeight: "1.3"
               }}
@@ -270,22 +271,22 @@ const GirlsEducation = () => {
 
       <div className="row g-4 mb-5">
         <div className="col-lg-6">
-          <div 
+          <div
             className="card border-0"
-            style={{ 
+            style={{
               borderRadius: "8px",
               backgroundColor: "white",
               border: "1px solid #e9ecef"
             }}
           >
-            <div 
-              style={{ 
+            <div
+              style={{
                 padding: "20px",
                 textAlign: "center"
               }}
             >
-              <img 
-                src={data.impactSection?.totalImpact?.image || '/assets/images/GirlsEducation/image2.jpg'} 
+              <img
+                src={data.impactSection?.totalImpact?.image || '/assets/images/GirlsEducation/image2.jpg'}
                 alt="NEIEA Girls Education Impact"
                 style={{
                   width: "100%",
@@ -297,10 +298,10 @@ const GirlsEducation = () => {
               />
             </div>
             <div className="card-body p-4">
-              <h4 
-                style={{ 
-                  color: "#00000", 
-                  fontWeight: "700", 
+              <h4
+                style={{
+                  color: "#00000",
+                  fontWeight: "700",
                   marginBottom: "15px",
                   fontSize: "20px",
                   textAlign: "center"
@@ -309,13 +310,13 @@ const GirlsEducation = () => {
                 {data.impactSection?.totalImpact?.title}
               </h4>
               <div className="text-center mb-3">
-                <div 
-                  style={{ 
-                    backgroundColor: "#f8f9fa", 
-                    color: "#00000", 
-                    padding: "12px 20px", 
-                    borderRadius: "6px", 
-                    fontSize: "18px", 
+                <div
+                  style={{
+                    backgroundColor: "#f8f9fa",
+                    color: "#00000",
+                    padding: "12px 20px",
+                    borderRadius: "6px",
+                    fontSize: "18px",
                     fontWeight: "700",
                     display: "inline-block",
                     marginBottom: "15px",
@@ -325,10 +326,10 @@ const GirlsEducation = () => {
                   {data.impactSection?.totalImpact?.stats}
                 </div>
               </div>
-              <p 
-                style={{ 
-                  color: "#00000", 
-                  fontSize: "15px", 
+              <p
+                style={{
+                  color: "#00000",
+                  fontSize: "15px",
                   lineHeight: "1.6",
                   margin: "0",
                   textAlign: "center"
@@ -340,25 +341,25 @@ const GirlsEducation = () => {
           </div>
         </div>
         <div className="col-lg-6">
-          <div 
+          <div
             className="card border-0"
-            style={{ 
-              borderRadius: "8px", 
+            style={{
+              borderRadius: "8px",
               padding: "30px",
               backgroundColor: "white",
               border: "1px solid #e9ecef"
             }}
           >
-            <h5 
-              style={{ 
-                color: "#00000", 
-                fontWeight: "700", 
+            <h5
+              style={{
+                color: "#00000",
+                fontWeight: "700",
                 marginBottom: "20px"
               }}
             >
               🌟 Our Partner Organizations
             </h5>
-            
+
             {(data.impactSection?.partnerOrganizationsByState || []).map((st, idx) => (
               <div className="mb-4" key={st._id || idx}>
                 <h6 style={{ color: "#00000", fontWeight: "600", marginBottom: "10px", fontSize: "14px" }}>
@@ -366,13 +367,13 @@ const GirlsEducation = () => {
                 </h6>
                 <div className="d-flex flex-wrap gap-2 mb-3">
                   {(st.partners || []).map((partner, pidx) => (
-                    <span 
+                    <span
                       key={partner._id || pidx}
-                      style={{ 
-                        backgroundColor: "#f8f9fa", 
-                        color: "#00000", 
-                        padding: "4px 8px", 
-                        borderRadius: "6px", 
+                      style={{
+                        backgroundColor: "#f8f9fa",
+                        color: "#00000",
+                        padding: "4px 8px",
+                        borderRadius: "6px",
                         fontSize: "11px",
                         fontWeight: "500",
                         border: "1px solid #e9ecef"
@@ -418,7 +419,7 @@ const GirlsEducation = () => {
       <div className="row mb-5">
         <div className="col-12">
           <div className="text-center mb-5">
-            <h6 
+            <h6
               style={{
                 color: "#00000",
                 fontSize: "14px",
@@ -430,11 +431,11 @@ const GirlsEducation = () => {
             >
               FUTURE VISION
             </h6>
-            <h2 
-              style={{ 
-                fontSize: "36px", 
-                fontWeight: "700", 
-                color: "#00000", 
+            <h2
+              style={{
+                fontSize: "36px",
+                fontWeight: "700",
+                color: "#00000",
                 marginBottom: "20px",
                 lineHeight: "1.3"
               }}
@@ -460,29 +461,29 @@ const GirlsEducation = () => {
       {/* Scalable Model */}
       <div className="row mb-5">
         <div className="col-lg-8 mx-auto">
-          <div 
+          <div
             className="card border-0"
-            style={{ 
-              borderRadius: "8px", 
+            style={{
+              borderRadius: "8px",
               padding: "30px",
               backgroundColor: "white",
               border: "1px solid #e9ecef"
             }}
           >
             <div className="text-center">
-              <h5 
-                style={{ 
-                  color: "#00000", 
-                  fontWeight: "700", 
+              <h5
+                style={{
+                  color: "#00000",
+                  fontWeight: "700",
                   marginBottom: "15px"
                 }}
               >
                 🚀 Scalable & Sustainable Model
               </h5>
-              <p 
-                style={{ 
-                  color: "#00000", 
-                  fontSize: "16px", 
+              <p
+                style={{
+                  color: "#00000",
+                  fontSize: "16px",
                   lineHeight: "1.6",
                   margin: "0"
                 }}
@@ -497,28 +498,28 @@ const GirlsEducation = () => {
       {/* Join the Movement */}
       <div className="row">
         <div className="col-lg-10 mx-auto">
-          <div 
+          <div
             className="card border-0 text-center"
-            style={{ 
-              borderRadius: "8px", 
+            style={{
+              borderRadius: "8px",
               backgroundColor: "white",
               color: "#00000",
               padding: "50px 40px",
               border: "1px solid #e9ecef"
             }}
           >
-            <h3 
-              style={{ 
-                fontSize: "28px", 
-                fontWeight: "700", 
+            <h3
+              style={{
+                fontSize: "28px",
+                fontWeight: "700",
                 marginBottom: "20px"
               }}
             >
               {data.joinMovementSection?.heading}
             </h3>
-            <p 
-              style={{ 
-                fontSize: "18px", 
+            <p
+              style={{
+                fontSize: "18px",
                 marginBottom: "25px",
                 color: "#00000",
                 maxWidth: "700px",
@@ -527,9 +528,9 @@ const GirlsEducation = () => {
             >
               {data.joinMovementSection?.description}
             </p>
-            <p 
-              style={{ 
-                fontSize: "16px", 
+            <p
+              style={{
+                fontSize: "16px",
                 marginBottom: "30px",
                 color: "#00000",
                 fontWeight: "600"
@@ -538,7 +539,7 @@ const GirlsEducation = () => {
               {/* Optional supporting text can be handled in CMS if needed */}
             </p>
             <div className="d-flex gap-3 justify-content-center flex-wrap">
-              <Link 
+              <Link
                 to={data.joinMovementSection?.supportButtonLink || '/donate'}
                 className="btn btn-lg"
                 style={{
@@ -553,7 +554,7 @@ const GirlsEducation = () => {
               >
                 {data.joinMovementSection?.supportButtonText || "💝 Support Girls' Education"}
               </Link>
-              <Link 
+              <Link
                 to={data.joinMovementSection?.getInvolvedButtonLink || '/about-us/contact'}
                 className="btn btn-outline-secondary btn-lg"
                 style={{
@@ -563,8 +564,8 @@ const GirlsEducation = () => {
                   fontSize: "16px",
                   borderColor: "#00000",
                   color: "#00000",
-                  
-              
+
+
                 }}
               >
                 {data.joinMovementSection?.getInvolvedButtonText || '📞 Get Involved'}

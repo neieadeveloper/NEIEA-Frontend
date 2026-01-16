@@ -693,7 +693,7 @@ const ApplyCourse = () => {
             </DialogContent>
           </Dialog>
 
-          <Dialog open={showDialog} onOpenChange={setShowDialog}>
+          <Dialog open={true} onOpenChange={setShowDialog}>
             <DialogContent className="application-success-dialog">
               <DialogHeader>
                 <DialogTitle className="application-success-title">Application Submitted!</DialogTitle>

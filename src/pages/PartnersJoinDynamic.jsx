@@ -81,11 +81,12 @@ const PartnersJoinDynamic = () => {
       subtitle={page?.headerSection?.subtitle || 'Together We Can Transform Education'}
       description={''}
       heroImage={page?.headerSection?.imageUrl || '/assets/images/JoinNeieaAsPartner/1.png'}
-      videoLink={page?.headerSection?.videoLink || null}
+      // videoLink={page?.headerSection?.videoLink || null}
+      heroVideoUrl={page?.headerSection?.videoLink || null}
     >
       {/* Main Content Section cloned from original static layout */}
-      <section style={{ 
-        backgroundColor: '#ffffff', 
+      <section style={{
+        backgroundColor: '#ffffff',
         padding: '60px 0',
         minHeight: '100vh',
         fontFamily: 'system-ui, -apple-system, "Roboto", sans-serif;'

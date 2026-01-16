@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PageTemplate from '../components/PageTemplate';
 import { useTestimonials } from '../hooks/useTestimonials';
 import { publicFeaturedStoriesApi } from '../lib/testimonialsApi';
+import { Link } from 'react-router-dom';
 
 const Testimonials = () => {
   const { cardTestimonials, videoTestimonials, loading, error } = useTestimonials();
@@ -87,11 +88,11 @@ const Testimonials = () => {
       {/* Testimonials Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h1 
-            style={{ 
-              fontSize: "32px", 
-              fontWeight: "700", 
-              color: "#212529", 
+          <h1
+            style={{
+              fontSize: "32px",
+              fontWeight: "700",
+              color: "#212529",
               marginBottom: "40px",
               textAlign: "center"
             }}
@@ -104,21 +105,21 @@ const Testimonials = () => {
       <div className="row g-4 mb-5">
         {cardTestimonials.map((testimonial, index) => (
           <div key={testimonial._id} className="col-lg-4 col-md-6 col-12 mb-4">
-             <div 
-               className="testimonial-card h-100"
-               style={{ 
-                 background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
-                 borderRadius: "20px",
-                 padding: "30px 25px",
-                 boxShadow: "0 10px 30px rgba(6, 3, 143, 0.08)",
-                 border: "1px solid rgba(6, 3, 143, 0.1)",
-                 position: "relative",
-                 overflow: "hidden",
-                 transition: "all 0.3s ease",
-                 minHeight: "auto",
-                 display: "flex",
-                 flexDirection: "column"
-               }}
+            <div
+              className="testimonial-card h-100"
+              style={{
+                background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
+                borderRadius: "20px",
+                padding: "30px 25px",
+                boxShadow: "0 10px 30px rgba(6, 3, 143, 0.08)",
+                border: "1px solid rgba(6, 3, 143, 0.1)",
+                position: "relative",
+                overflow: "hidden",
+                transition: "all 0.3s ease",
+                minHeight: "auto",
+                display: "flex",
+                flexDirection: "column"
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-5px)";
                 e.currentTarget.style.boxShadow = "0 20px 40px rgba(6, 3, 143, 0.15)";
@@ -129,7 +130,7 @@ const Testimonials = () => {
               }}
             >
               {/* Quote Icon */}
-              <div 
+              <div
                 style={{
                   position: "absolute",
                   top: "20px",
@@ -145,63 +146,63 @@ const Testimonials = () => {
                 }}
               >
                 <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
                 </svg>
               </div>
 
-               {/* Profile Section */}
-               <div className="d-flex align-items-center mb-4">
-                 <div 
-                   style={{
-                     width: "80px",
-                     height: "80px",
-                     borderRadius: "50%",
-                     overflow: "hidden",
-                     border: "3px solid #06038F",
-                     marginRight: "15px",
-                     flexShrink: 0
-                   }}
-                   className="profile-image-container"
-                 >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                     style={{ 
-                       width: "100%", 
-                       height: "100%", 
-                       objectFit: "cover",
-                       objectPosition: "center top"
-                     }}
-                   />
-                 </div>
+              {/* Profile Section */}
+              <div className="d-flex align-items-center mb-4">
+                <div
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "3px solid #06038F",
+                    marginRight: "15px",
+                    flexShrink: 0
+                  }}
+                  className="profile-image-container"
+                >
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center top"
+                    }}
+                  />
+                </div>
                 <div>
-                   <h5 
-                     style={{ 
-                       color: "#212529", 
-                       fontWeight: "700", 
-                       marginBottom: "8px",
-                       fontSize: "18px",
-                       fontFamily: "inherit"
-                     }}
-                     className="testimonial-name"
-                   >
+                  <h5
+                    style={{
+                      color: "#212529",
+                      fontWeight: "700",
+                      marginBottom: "8px",
+                      fontSize: "18px",
+                      fontFamily: "inherit"
+                    }}
+                    className="testimonial-name"
+                  >
                     {testimonial.name}
                   </h5>
-                   <p 
-                     style={{ 
-                       color: "#6c757d", 
-                       fontSize: "14px", 
-                       margin: "0",
-                       fontWeight: "500"
-                     }}
-                   >
-                     📍 {testimonial.location}
+                  <p
+                    style={{
+                      color: "#6c757d",
+                      fontSize: "14px",
+                      margin: "0",
+                      fontWeight: "500"
+                    }}
+                  >
+                    📍 {testimonial.location}
                   </p>
                 </div>
               </div>
 
               {/* Testimonial Content */}
-              <div 
+              <div
                 style={{
                   backgroundColor: "rgba(6, 3, 143, 0.03)",
                   borderRadius: "15px",
@@ -214,18 +215,18 @@ const Testimonials = () => {
                   flex: "1"
                 }}
               >
-                <p 
-                  style={{ 
-                    color: "#495057", 
-                    lineHeight: "1.6", 
+                <p
+                  style={{
+                    color: "#495057",
+                    lineHeight: "1.6",
                     fontSize: "14px",
                     fontStyle: "italic",
                     margin: "0",
                     fontFamily: "inherit"
                   }}
                 >
-                "{testimonial.content}"
-              </p>
+                  "{testimonial.content}"
+                </p>
               </div>
 
             </div>
@@ -236,21 +237,21 @@ const Testimonials = () => {
       {/* Featured Videos Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h1 
-            style={{ 
-              fontSize: "32px", 
-              fontWeight: "700", 
-              color: "#212529", 
+          <h1
+            style={{
+              fontSize: "32px",
+              fontWeight: "700",
+              color: "#212529",
               marginBottom: "40px",
               textAlign: "center"
             }}
           >
             Video Testimonials
           </h1>
-          <p 
-            style={{ 
-              fontSize: "18px", 
-              color: "#6c757d", 
+          <p
+            style={{
+              fontSize: "18px",
+              color: "#6c757d",
               textAlign: "center",
               marginBottom: "40px",
               maxWidth: "600px",
@@ -265,9 +266,9 @@ const Testimonials = () => {
       <div className="row g-4">
         {videoTestimonials.map((video) => (
           <div key={video._id} className="col-lg-6 col-md-12">
-            <div 
+            <div
               className="video-testimonial-card h-100"
-              style={{ 
+              style={{
                 background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
                 borderRadius: "20px",
                 overflow: "hidden",
@@ -284,9 +285,9 @@ const Testimonials = () => {
                 e.currentTarget.style.boxShadow = "0 10px 30px rgba(6, 3, 143, 0.08)";
               }}
             >
-                <div 
-                  style={{
-                  height: "280px", 
+              <div
+                style={{
+                  height: "280px",
                   position: "relative",
                   borderRadius: "20px 20px 0 0",
                   overflow: "hidden"
@@ -295,36 +296,36 @@ const Testimonials = () => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src={`https://www.youtube.com/embed/${video.videoUrl.includes('shorts') 
-                    ? video.videoUrl.split('/shorts/')[1] 
-                    : video.videoUrl.includes('youtu.be/') 
+                  src={`https://www.youtube.com/embed/${video.videoUrl.includes('shorts')
+                    ? video.videoUrl.split('/shorts/')[1]
+                    : video.videoUrl.includes('youtu.be/')
                       ? video.videoUrl.split('youtu.be/')[1].split('?')[0]
                       : video.videoUrl.split('v=')[1]?.split('&')[0]
-                  }`}
+                    }`}
                   title={video.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
-                  style={{ 
+                  style={{
                     borderRadius: "20px 20px 0 0",
                     border: "none"
                   }}
                 ></iframe>
-                </div>
-              <div 
+              </div>
+              <div
                 style={{
                   padding: "25px",
                   background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)"
                 }}
               >
                 <div className="d-flex justify-content-between align-items-center mb-3">
-                  <span 
-                    style={{ 
+                  <span
+                    style={{
                       background: "linear-gradient(135deg, #06038F 0%, #4c46ff 100%)",
-                      color: "white", 
-                      padding: "6px 12px", 
-                      borderRadius: "20px", 
-                      fontSize: "11px", 
+                      color: "white",
+                      padding: "6px 12px",
+                      borderRadius: "20px",
+                      fontSize: "11px",
                       fontWeight: "600",
                       textTransform: "uppercase",
                       letterSpacing: "0.5px",
@@ -333,9 +334,9 @@ const Testimonials = () => {
                   >
                     🎥 {video.videoTag || video.type}
                   </span>
-                  <span 
-                    style={{ 
-                      color: "#6c757d", 
+                  <span
+                    style={{
+                      color: "#6c757d",
                       fontSize: "12px",
                       backgroundColor: "rgba(6, 3, 143, 0.1)",
                       padding: "4px 8px",
@@ -346,10 +347,10 @@ const Testimonials = () => {
                     {video.videoType || video.duration}
                   </span>
                 </div>
-                <h5 
-                  style={{ 
-                    color: "#212529", 
-                    fontWeight: "700", 
+                <h5
+                  style={{
+                    color: "#212529",
+                    fontWeight: "700",
                     marginBottom: "12px",
                     lineHeight: "1.4",
                     fontSize: "18px",
@@ -358,10 +359,10 @@ const Testimonials = () => {
                 >
                   {video.title}
                 </h5>
-                <p 
-                  style={{ 
-                    color: "#6c757d", 
-                    lineHeight: "1.6", 
+                <p
+                  style={{
+                    color: "#6c757d",
+                    lineHeight: "1.6",
                     fontSize: "14px",
                     marginBottom: "0",
                     fontFamily: "inherit"
@@ -369,9 +370,9 @@ const Testimonials = () => {
                 >
                   {video.description}
                 </p>
-                
+
                 {/* Video Stats */}
-                <div 
+                <div
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -385,7 +386,7 @@ const Testimonials = () => {
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                     <svg width="16" height="16" fill="#06038F" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
+                      <path d="M8 5v14l11-7z" />
                     </svg>
                     <span style={{ fontSize: "12px", color: "#06038F", fontWeight: "600" }}>
                       Watch Now
@@ -393,14 +394,14 @@ const Testimonials = () => {
                   </div>
                   <div style={{ display: "flex", gap: "3px" }}>
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <svg 
-                        key={star} 
-                        width="14" 
-                        height="14" 
-                        fill={video.rating && video.rating >= star ? "#FFD700" : "#E5E5E5"} 
+                      <svg
+                        key={star}
+                        width="14"
+                        height="14"
+                        fill={video.rating && video.rating >= star ? "#FFD700" : "#E5E5E5"}
                         viewBox="0 0 24 24"
                       >
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                       </svg>
                     ))}
                     {/* {video.rating && video.rating > 0 && (
@@ -418,23 +419,23 @@ const Testimonials = () => {
 
       {/* Featured Stories Section */}
       {!storiesLoading && featuredStories.length > 0 && (
-        <div className="row mb-5">
+        <div className="row mb-5 mt-5">
           <div className="col-12">
-            <h1 
-              style={{ 
-                fontSize: "32px", 
-                fontWeight: "700", 
-                color: "#212529", 
+            <h1
+              style={{
+                fontSize: "32px",
+                fontWeight: "700",
+                color: "#212529",
                 marginBottom: "40px",
                 textAlign: "center"
               }}
             >
               Featured Stories
             </h1>
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                color: "#6c757d", 
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#6c757d",
                 textAlign: "center",
                 marginBottom: "40px",
                 maxWidth: "600px",
@@ -450,10 +451,10 @@ const Testimonials = () => {
       {!storiesLoading && featuredStories.length > 0 && (
         <div className="row g-4 mb-5">
           {featuredStories.map((story) => (
-            <div key={story._id} className="col-lg-4 col-md-6 col-12 mb-4">
-              <div 
+            <div key={story._id} className="col-lg-6 col-md-6 col-12 mb-4">
+              <div
                 className="featured-story-card h-100"
-                style={{ 
+                style={{
                   background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
                   borderRadius: "20px",
                   padding: "30px 25px",
@@ -476,7 +477,7 @@ const Testimonials = () => {
                 }}
               >
                 {/* Story Icon */}
-                <div 
+                <div
                   style={{
                     position: "absolute",
                     top: "20px",
@@ -492,28 +493,29 @@ const Testimonials = () => {
                   }}
                 >
                   <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
 
                 {/* Story Content */}
                 <div style={{ flex: "1" }}>
-                  <h3 
-                    style={{ 
-                      color: "#212529", 
-                      fontWeight: "700", 
+                  <h3
+                    style={{
+                      color: "#212529",
+                      fontWeight: "700",
                       marginBottom: "12px",
                       fontSize: "20px",
                       fontFamily: "inherit",
-                      lineHeight: "1.3"
+                      lineHeight: "1.3",
+                      paddingRight: "50px"
                     }}
                   >
                     {story.heading}
                   </h3>
-                  <p 
-                    style={{ 
-                      color: "#6c757d", 
-                      fontSize: "15px", 
+                  <p
+                    style={{
+                      color: "#6c757d",
+                      fontSize: "15px",
                       marginBottom: "20px",
                       fontWeight: "500",
                       lineHeight: "1.5"
@@ -521,7 +523,7 @@ const Testimonials = () => {
                   >
                     {story.subHeading}
                   </p>
-                  <div 
+                  <div
                     style={{
                       backgroundColor: "rgba(6, 3, 143, 0.03)",
                       borderRadius: "15px",
@@ -530,10 +532,10 @@ const Testimonials = () => {
                       position: "relative"
                     }}
                   >
-                    <p 
-                      style={{ 
-                        color: "#495057", 
-                        lineHeight: "1.7", 
+                    <p
+                      style={{
+                        color: "#495057",
+                        lineHeight: "1.7",
                         fontSize: "14px",
                         margin: "0",
                         fontFamily: "inherit"
@@ -550,52 +552,67 @@ const Testimonials = () => {
       )}
 
       {/* Call to Action */}
-      {/* <div className="row mt-5">
+      <div className="row mt-5 mb-5">
         <div className="col-12 text-center">
-          <div 
-            style={{ 
-              backgroundColor: "#f8f9fa", 
-              padding: "40px", 
-              borderRadius: "15px" 
+          <div
+            style={{
+              background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
+              padding: "60px 40px",
+              borderRadius: "20px",
+              boxShadow: "0 10px 30px rgba(6, 3, 143, 0.08)",
+              border: "1px solid rgba(6, 3, 143, 0.1)"
             }}
           >
-            <h4 
-              style={{ 
-                color: "#212529", 
-                fontWeight: "600", 
-                marginBottom: "15px" 
+            <h2
+              style={{
+                color: "#212529",
+                fontWeight: "700",
+                marginBottom: "20px",
+                fontSize: "28px"
               }}
             >
               Share Your Story
-            </h4>
-            <p 
-              style={{ 
-                color: "#6c757d", 
-                marginBottom: "25px",
+            </h2>
+            <p
+              style={{
+                color: "#6c757d",
+                marginBottom: "30px",
                 maxWidth: "600px",
-                margin: "0 auto 25px"
+                margin: "0 auto 30px",
+                fontSize: "16px",
+                lineHeight: "1.6"
               }}
             >
-              Have you been impacted by NEIEA's programs? We'd love to hear your story and share it with our community.
+              Have you been impacted by NEIEA's programs? We'd love to hear your story and share it with our community. Your experience motivates us to do more.
             </p>
-            <a 
-              href="/about-us/contact" 
+            <Link
+              to="/about-us/contact"
               className="btn btn-primary"
               style={{
                 backgroundColor: "#06038F",
                 borderColor: "#06038F",
-                padding: "12px 30px",
+                padding: "15px 40px",
                 fontSize: "16px",
                 fontWeight: "600",
-                borderRadius: "25px",
-                textDecoration: "none"
+                borderRadius: "30px",
+                textDecoration: "none",
+                boxShadow: "0 4px 15px rgba(6, 3, 143, 0.3)",
+                transition: "transform 0.2s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(6, 3, 143, 0.4)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 15px rgba(6, 3, 143, 0.3)";
               }}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
-      </div> */}
+      </div>
     </PageTemplate>
   );
 };

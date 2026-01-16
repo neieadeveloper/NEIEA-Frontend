@@ -8,8 +8,8 @@ const TeachersTraining = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(()=>{
-    const load = async ()=>{
+  useEffect(() => {
+    const load = async () => {
       try { const r = await axiosInstance.get('/teachers-training-page'); if (r.data?.success) setData(r.data.data); }
       finally { setLoading(false); }
     };
@@ -94,7 +94,7 @@ const TeachersTraining = () => {
     {
       id: 2,
       title: "Technology Training",
-      duration: "2 weeks", 
+      duration: "2 weeks",
       description: "Mastery of Google Workspace, digital tools, and apps that power NEIEA's blended model.",
       icon: "💻",
       features: ["Google Workspace", "Digital Classroom Management", "Online Assessment Tools", "Educational Apps"]
@@ -181,26 +181,27 @@ const TeachersTraining = () => {
       subtitle={data.heroSection?.subtitle}
       description={data.heroSection?.description}
       heroImage={data.heroSection?.heroImage || "/assets/images/Teacher's Training Picture.jpg"}
-      videoLink={data.heroSection?.videoLink || null}
+      // videoLink={data.heroSection?.videoLink || null}
+      heroVideoUrl={data.heroSection?.videoLink || null}
     >
       {/* Mission Statement */}
       <div className="row mb-1 mb-md-5">
         <div className="col-lg-10 mx-auto">
           <div className="text-center px-3 px-md-4" style={{ padding: "15px", paddingTop: "20px", paddingBottom: "20px" }}>
-            <h2 
-              style={{ 
-                fontSize: "32px", 
-                fontWeight: "700", 
+            <h2
+              style={{
+                fontSize: "32px",
+                fontWeight: "700",
                 marginBottom: "25px",
                 color: "#00000"
               }}
             >
               {data.missionSection?.heading}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "20px", 
-                lineHeight: "1.8", 
+            <p
+              style={{
+                fontSize: "20px",
+                lineHeight: "1.8",
                 marginBottom: "0",
                 color: "#00000"
               }}
@@ -215,7 +216,7 @@ const TeachersTraining = () => {
       <div className="row mb-1 mb-md-5">
         <div className="col-12">
           <div className="text-center mb-2 mb-md-5">
-            <h6 
+            <h6
               style={{
                 color: "#fd7e14",
                 fontSize: "14px",
@@ -227,21 +228,21 @@ const TeachersTraining = () => {
             >
               TRAINING PATHWAYS
             </h6>
-            <h2 
-              style={{ 
-                fontSize: "36px", 
-                fontWeight: "700", 
-                color: "#00000", 
+            <h2
+              style={{
+                fontSize: "36px",
+                fontWeight: "700",
+                color: "#00000",
                 marginBottom: "20px",
                 lineHeight: "1.3"
               }}
             >
               {data.trainingPathwaysSection?.heading}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                color: "#00000", 
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#00000",
                 maxWidth: "600px",
                 margin: "0 auto"
               }}
@@ -253,12 +254,12 @@ const TeachersTraining = () => {
       </div>
 
       <div className="row g-4 mb-2 mb-md-5">
-        {(data.trainingPathwaysSection?.items||[]).map((pathway, idx) => (
+        {(data.trainingPathwaysSection?.items || []).map((pathway, idx) => (
           <div key={pathway.id} className="col-lg-6">
             <div style={{ padding: "5px 0" }} className="py-md-4 training-pathway-card">
-              <div 
+              <div
                 className="px-md-5 py-md-4"
-                style={{ 
+                style={{
                   backgroundColor: "transparent",
                   padding: "10px 15px",
                   color: "#00000",
@@ -276,22 +277,22 @@ const TeachersTraining = () => {
                   `}
                 </style>
                 <div className="d-flex align-items-center justify-content-between mb-3">
-                  <div 
-                    style={{ 
+                  <div
+                    style={{
                       fontSize: "40px"
                     }}
                   >
                     {pathway.icon}
                   </div>
                   <div className="text-end">
-                    <span 
+                    <span
                       className="level-badge"
-                      style={{ 
-                        backgroundColor: "transparent", 
-                        color: "#00000", 
-                        padding: "6px 12px", 
-                        borderRadius: "6px", 
-                        fontSize: "12px", 
+                      style={{
+                        backgroundColor: "transparent",
+                        color: "#00000",
+                        padding: "6px 12px",
+                        borderRadius: "6px",
+                        fontSize: "12px",
                         fontWeight: "600",
                         border: "none"
                       }}
@@ -309,21 +310,21 @@ const TeachersTraining = () => {
                       {pathway.level}
                     </span>
                     <div style={{ color: "#00000", fontSize: "14px", marginTop: "5px" }}>
-                    {pathway.duration}
+                      {pathway.duration}
                     </div>
                   </div>
                 </div>
-                <h4 
-                  style={{ 
-                    color: "#00000", 
-                    fontWeight: "700", 
+                <h4
+                  style={{
+                    color: "#00000",
+                    fontWeight: "700",
                     marginBottom: "15px"
                   }}
                 >
                   {pathway.title}
                 </h4>
               </div>
-              
+
               <div className="card-body p-2 p-md-4" style={{ backgroundColor: "transparent" }}>
                 <style>
                   {`
@@ -342,15 +343,15 @@ const TeachersTraining = () => {
                     Key Components:
                   </h6>
                   <div className="d-flex flex-wrap gap-2">
-                    {(pathway.modules||[]).map((module, index) => (
-                      <span 
+                    {(pathway.modules || []).map((module, index) => (
+                      <span
                         key={index}
                         className="module-tag"
-                        style={{ 
-                          backgroundColor: "transparent", 
-                          color: "#495057", 
-                          padding: "6px 12px", 
-                          borderRadius: "12px", 
+                        style={{
+                          backgroundColor: "transparent",
+                          color: "#495057",
+                          padding: "6px 12px",
+                          borderRadius: "12px",
                           fontSize: "12px",
                           border: "none",
                           fontWeight: "500"
@@ -371,11 +372,11 @@ const TeachersTraining = () => {
                     ))}
                   </div>
                 </div>
-                <div 
+                <div
                   className="outcome-box"
-                  style={{ 
+                  style={{
                     backgroundColor: "transparent",
-                    padding: "15px", 
+                    padding: "15px",
                     borderRadius: "8px",
                     fontSize: "14px",
                     color: "#00000",
@@ -405,7 +406,7 @@ const TeachersTraining = () => {
       <div className="row mb-1 mb-md-5">
         <div className="col-12">
           <div className="text-center mb-2 mb-md-5">
-            <h6 
+            <h6
               style={{
                 color: "#fd7e14",
                 fontSize: "14px",
@@ -417,21 +418,21 @@ const TeachersTraining = () => {
             >
               CORE COMPONENTS
             </h6>
-            <h2 
-              style={{ 
-                fontSize: "36px", 
-                fontWeight: "700", 
-                color: "#00000", 
+            <h2
+              style={{
+                fontSize: "36px",
+                fontWeight: "700",
+                color: "#00000",
                 marginBottom: "20px",
                 lineHeight: "1.3"
               }}
             >
               {data.coreComponentsSection?.heading}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                color: "#00000", 
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#00000",
                 maxWidth: "700px",
                 margin: "0 auto"
               }}
@@ -443,12 +444,12 @@ const TeachersTraining = () => {
       </div>
 
       <div className="row g-4 mb-2 mb-md-5">
-        {(data.coreComponentsSection?.items||[]).map((component, idx) => (
+        {(data.coreComponentsSection?.items || []).map((component, idx) => (
           <div key={component.id} className="col-lg-4">
-            <div 
+            <div
               className="card h-100 border-0 text-center px-md-5 py-md-4 core-component-card"
-              style={{ 
-                borderRadius: "8px", 
+              style={{
+                borderRadius: "8px",
                 padding: "15px 10px",
                 backgroundColor: "transparent",
                 border: "none"
@@ -464,33 +465,33 @@ const TeachersTraining = () => {
                   }
                 `}
               </style>
-              <div 
-                style={{ 
-                  fontSize: "60px", 
+              <div
+                style={{
+                  fontSize: "60px",
                   marginBottom: "25px"
                 }}
               >
                 {component.icon}
               </div>
-              <h5 
-                style={{ 
-                  color: "#00000", 
-                  fontWeight: "700", 
+              <h5
+                style={{
+                  color: "#00000",
+                  fontWeight: "700",
                   marginBottom: "15px",
                   fontSize: "22px"
                 }}
               >
                 {component.title}
               </h5>
-              <div 
+              <div
                 className="duration-badge"
-                style={{ 
-                  backgroundColor: "transparent", 
-                  color: "#00000", 
-                  padding: "8px 20px", 
-                  borderRadius: "6px", 
-                  fontSize: "14px", 
-                  fontWeight: "600", 
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#00000",
+                  padding: "8px 20px",
+                  borderRadius: "6px",
+                  fontSize: "14px",
+                  fontWeight: "600",
                   marginBottom: "20px",
                   display: "inline-block",
                   border: "none"
@@ -508,26 +509,26 @@ const TeachersTraining = () => {
                 </style>
                 {component.duration}
               </div>
-              <p 
-                style={{ 
-                  color: "#00000", 
-                  fontSize: "16px", 
-                  lineHeight: "1.6", 
+              <p
+                style={{
+                  color: "#00000",
+                  fontSize: "16px",
+                  lineHeight: "1.6",
                   marginBottom: "20px"
                 }}
               >
                 {component.description}
               </p>
               <div className="d-flex flex-wrap gap-2 justify-content-center">
-                {(component.features||[]).map((feature, index) => (
-                  <span 
+                {(component.features || []).map((feature, index) => (
+                  <span
                     key={index}
                     className="feature-tag"
-                    style={{ 
-                      backgroundColor: "transparent", 
-                      color: "#495057", 
-                      padding: "4px 10px", 
-                      borderRadius: "12px", 
+                    style={{
+                      backgroundColor: "transparent",
+                      color: "#495057",
+                      padding: "4px 10px",
+                      borderRadius: "12px",
                       fontSize: "12px",
                       border: "none",
                       fontWeight: "500"
@@ -556,7 +557,7 @@ const TeachersTraining = () => {
       <div className="row mb-1 mb-md-5">
         <div className="col-12">
           <div className="text-center mb-2 mb-md-5">
-            <h6 
+            <h6
               style={{
                 color: "#fd7e14",
                 fontSize: "14px",
@@ -568,21 +569,21 @@ const TeachersTraining = () => {
             >
               SKILLS DEVELOPMENT
             </h6>
-            <h2 
-              style={{ 
-                fontSize: "36px", 
-                fontWeight: "700", 
-                color: "#00000", 
+            <h2
+              style={{
+                fontSize: "36px",
+                fontWeight: "700",
+                color: "#00000",
                 marginBottom: "20px",
                 lineHeight: "1.3"
               }}
             >
               {data.skillsGainedSection?.heading}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                color: "#00000", 
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#00000",
                 maxWidth: "600px",
                 margin: "0 auto"
               }}
@@ -594,11 +595,11 @@ const TeachersTraining = () => {
       </div>
 
       <div className="row g-0 g-md-4 mb-0 mb-md-5">
-        {(data.skillsGainedSection?.items||[]).map((skill, idx) => (
+        {(data.skillsGainedSection?.items || []).map((skill, idx) => (
           <div key={skill.id} className="col-lg-6">
-            <div 
+            <div
               className="card h-100 border-0 p-md-4 skills-card"
-              style={{ 
+              style={{
                 borderRadius: "8px",
                 padding: "0px",
                 backgroundColor: "transparent",
@@ -628,32 +629,32 @@ const TeachersTraining = () => {
                 `}
               </style>
               <div className="d-flex align-items-start">
-                <div 
+                <div
                   className="me-3 me-md-4"
-                  style={{ 
-                    fontSize: "40px", 
+                  style={{
+                    fontSize: "40px",
                     marginRight: "10px"
                   }}
                 >
                   {skill.icon}
                 </div>
                 <div>
-                  <h5 
+                  <h5
                     className="mb-2 mb-md-3"
-                    style={{ 
-                      color: "#00000", 
-                      fontWeight: "700", 
+                    style={{
+                      color: "#00000",
+                      fontWeight: "700",
                       marginBottom: "8px",
                       fontSize: "18px"
                     }}
                   >
                     {skill.title}
                   </h5>
-                  <p 
-                    style={{ 
-                      color: "#00000", 
-                      fontSize: "14px", 
-                      lineHeight: "1.4", 
+                  <p
+                    style={{
+                      color: "#00000",
+                      fontSize: "14px",
+                      lineHeight: "1.4",
                       margin: "0"
                     }}
                   >
@@ -670,7 +671,7 @@ const TeachersTraining = () => {
       <div className="row mb-1 mb-md-5">
         <div className="col-12">
           <div className="text-center mb-2 mb-md-5">
-            <h6 
+            <h6
               style={{
                 color: "#fd7e14",
                 fontSize: "14px",
@@ -682,21 +683,21 @@ const TeachersTraining = () => {
             >
               WHY CHOOSE US
             </h6>
-            <h2 
-              style={{ 
-                fontSize: "36px", 
-                fontWeight: "700", 
-                color: "#00000", 
+            <h2
+              style={{
+                fontSize: "36px",
+                fontWeight: "700",
+                color: "#00000",
                 marginBottom: "20px",
                 lineHeight: "1.3"
               }}
             >
               {data.whyChooseUsSection?.heading}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                color: "#00000", 
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#00000",
                 maxWidth: "600px",
                 margin: "0 auto"
               }}
@@ -708,12 +709,12 @@ const TeachersTraining = () => {
       </div>
 
       <div className="row g-0 g-md-4 mb-0 mb-md-5">
-        {(data.whyChooseUsSection?.items||[]).map((reason, idx) => (
+        {(data.whyChooseUsSection?.items || []).map((reason, idx) => (
           <div key={reason.id} className="col-lg-3 col-md-6">
-            <div 
+            <div
               className="card h-100 border-0 text-center p-md-4 why-choose-card"
-              style={{ 
-                borderRadius: "8px", 
+              style={{
+                borderRadius: "8px",
                 padding: "0px",
                 backgroundColor: "transparent",
                 border: "none"
@@ -753,32 +754,32 @@ const TeachersTraining = () => {
                 `}
               </style>
               <div className="d-flex d-md-block align-items-start">
-                <div 
+                <div
                   className="mb-2 mb-md-3 me-3 me-md-0 flex-shrink-0"
-                  style={{ 
-                    fontSize: "30px", 
+                  style={{
+                    fontSize: "30px",
                     marginBottom: "10px"
                   }}
                 >
                   {reason.icon}
                 </div>
                 <div className="flex-grow-1">
-                  <h6 
+                  <h6
                     className="mb-1 mb-md-3"
-                    style={{ 
-                      color: "#00000", 
-                      fontWeight: "700", 
+                    style={{
+                      color: "#00000",
+                      fontWeight: "700",
                       marginBottom: "4px",
                       fontSize: "14px"
                     }}
                   >
                     {reason.title}
                   </h6>
-                  <p 
-                    style={{ 
-                      color: "#00000", 
-                      fontSize: "11px", 
-                      lineHeight: "1.3", 
+                  <p
+                    style={{
+                      color: "#00000",
+                      fontSize: "11px",
+                      lineHeight: "1.3",
                       margin: "0"
                     }}
                   >
@@ -794,10 +795,10 @@ const TeachersTraining = () => {
       {/* Image Section */}
       <div className="row mb-1 mb-md-5">
         <div className="col-12">
-          <div 
+          <div
             className="card border-0 image-section-card"
-            style={{ 
-              borderRadius: "8px", 
+            style={{
+              borderRadius: "8px",
               overflow: "hidden",
               backgroundColor: "transparent",
               border: "none"
@@ -815,8 +816,8 @@ const TeachersTraining = () => {
             </style>
             <div className="row g-0">
               <div className="col-lg-6">
-                <img 
-                  src={data.imageSection?.image || "/assets/images/Teacher's Training Picture.jpg"} 
+                <img
+                  src={data.imageSection?.image || "/assets/images/Teacher's Training Picture.jpg"}
                   alt="NEIEA Teacher Training"
                   style={{
                     width: "100%",
@@ -826,9 +827,9 @@ const TeachersTraining = () => {
                 />
               </div>
               <div className="col-lg-6">
-                <div 
+                <div
                   className="p-3 p-md-5"
-                  style={{ 
+                  style={{
                     padding: "20px 15px",
                     height: "400px",
                     display: "flex",
@@ -837,20 +838,20 @@ const TeachersTraining = () => {
                     backgroundColor: "transparent"
                   }}
                 >
-                  <h3 
-                    style={{ 
-                      color: "#00000", 
-                      fontWeight: "700", 
+                  <h3
+                    style={{
+                      color: "#00000",
+                      fontWeight: "700",
                       marginBottom: "20px",
                       fontSize: "28px"
                     }}
                   >
                     {data.imageSection?.title || 'Empowering Educators Worldwide'}
                   </h3>
-                  <p 
-                    style={{ 
-                      color: "#00000", 
-                      fontSize: "16px", 
+                  <p
+                    style={{
+                      color: "#00000",
+                      fontSize: "16px",
                       lineHeight: "1.7",
                       marginBottom: "25px"
                     }}
@@ -858,7 +859,7 @@ const TeachersTraining = () => {
                     {data.imageSection?.description}
                   </p>
                   <div className="d-flex gap-2">
-                    <div 
+                    <div
                       style={{
                         width: "4px",
                         height: "40px",
@@ -866,10 +867,10 @@ const TeachersTraining = () => {
                         borderRadius: "2px"
                       }}
                     ></div>
-                    <p 
-                      style={{ 
-                        color: "#495057", 
-                        fontSize: "14px", 
+                    <p
+                      style={{
+                        color: "#495057",
+                        fontSize: "14px",
                         fontStyle: "italic",
                         margin: "0",
                         paddingLeft: "15px"
@@ -888,10 +889,10 @@ const TeachersTraining = () => {
       {/* Call to Action */}
       <div className="row">
         <div className="col-lg-10 mx-auto">
-          <div 
+          <div
             className="card border-0 text-center p-3 p-md-5 cta-card"
-            style={{ 
-              borderRadius: "8px", 
+            style={{
+              borderRadius: "8px",
               backgroundColor: "transparent",
               color: "#00000",
               padding: "20px 15px",
@@ -908,18 +909,18 @@ const TeachersTraining = () => {
                 }
               `}
             </style>
-            <h3 
-              style={{ 
-                fontSize: "28px", 
-                fontWeight: "700", 
+            <h3
+              style={{
+                fontSize: "28px",
+                fontWeight: "700",
                 marginBottom: "20px"
               }}
             >
               {data.ctaSection?.heading}
             </h3>
-            <p 
-              style={{ 
-                fontSize: "18px", 
+            <p
+              style={{
+                fontSize: "18px",
                 marginBottom: "30px",
                 color: "#00000",
                 maxWidth: "600px",
@@ -929,7 +930,7 @@ const TeachersTraining = () => {
               {data.ctaSection?.description}
             </p>
             <div className="d-flex gap-3 justify-content-center flex-wrap">
-              <button 
+              <button
                 className="btn btn-lg"
                 style={{
                   borderRadius: "6px",

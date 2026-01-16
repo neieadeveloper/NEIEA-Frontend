@@ -57,7 +57,7 @@ const PageTemplate = ({
           ></div>
 
           {/* Breadcrumb integrated in gradient background */}
-          {/* <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          <div className="container" style={{ position: "relative", zIndex: 2 }}>
             <nav aria-label="breadcrumb" style={{ paddingTop: "15px", paddingBottom: "0" }}>
               <ol
                 className="breadcrumb mb-0"
@@ -66,13 +66,13 @@ const PageTemplate = ({
                 <li className="breadcrumb-item">
                   <a
                     href="/"
-                    style={{ 
-                      color: "rgba(255, 255, 255, 0.9)", 
+                    style={{
+                      color: "rgba(255, 255, 255, 0.9)",
                       textDecoration: "none",
                       textShadow: "0 1px 2px rgba(0,0,0,0.3)"
                     }}
                   >
-                    🏠 Home
+                    Home
                   </a>
                 </li>
                 {breadcrumbPath.map((item, index) => (
@@ -81,8 +81,8 @@ const PageTemplate = ({
                       {item.link ? (
                         <a
                           href={item.link}
-                          style={{ 
-                            color: "rgba(255, 255, 255, 0.8)", 
+                          style={{
+                            color: "rgba(255, 255, 255, 0.8)",
                             textDecoration: "none",
                             textShadow: "0 1px 2px rgba(0,0,0,0.3)"
                           }}
@@ -90,7 +90,7 @@ const PageTemplate = ({
                           {item.name}
                         </a>
                       ) : (
-                        <span style={{ 
+                        <span style={{
                           color: "rgba(255, 255, 255, 0.9)",
                           textShadow: "0 1px 2px rgba(0,0,0,0.3)"
                         }}>
@@ -102,7 +102,7 @@ const PageTemplate = ({
                 ))}
               </ol>
             </nav>
-          </div> */}
+          </div>
 
           <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "60px", paddingBottom: "60px" }}>
             <div className="row align-items-center">

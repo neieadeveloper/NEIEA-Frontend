@@ -9,7 +9,7 @@ const IntroductionDynamic = () => {
         description: "To envision a society where all youth and citizens are able to obtain good quality education and use this to transform society ensuring human welfare, sustainability, and progress."
       },
       mission: {
-        title: "OUR MISSION", 
+        title: "OUR MISSION",
         description: "To provide good quality and innovative education to all segments of society with high consideration given to providing free education to the poor."
       }
     },
@@ -30,10 +30,10 @@ const IntroductionDynamic = () => {
     try {
       setLoading(true);
       const response = await axiosInstance.get('/introduction-page');
-      
+
       if (response.data.success && response.data.data) {
         const data = response.data.data;
-        
+
         // Map the API data to our component structure
         const mappedData = {
           visionMissionSection: data.visionMissionSection || {
@@ -52,7 +52,7 @@ const IntroductionDynamic = () => {
             image: data.registrationSection?.image || "/assets/images/vision2 (1).jpg"
           }
         };
-        
+
         setIntroductionData(mappedData);
       }
     } catch (err) {
@@ -83,7 +83,7 @@ const IntroductionDynamic = () => {
   return (
     <div className="introduction-page">
       {/* Breadcrumb */}
-      {/*
+
       <div
         className="container-fluid"
         style={{ backgroundColor: "#f8f9fa", padding: "10px 0" }}
@@ -99,7 +99,7 @@ const IntroductionDynamic = () => {
                   href="/"
                   style={{ color: "#6c757d", textDecoration: "none" }}
                 >
-                  🏠 Home
+                  Home
                 </a>
               </li>
               <li className="breadcrumb-item">
@@ -116,7 +116,7 @@ const IntroductionDynamic = () => {
           </nav>
         </div>
       </div>
-      */}
+
 
       {/* Vision Mission Section */}
       <section style={{ backgroundColor: "#CBF3BB", padding: "60px 0" }}>

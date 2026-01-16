@@ -6,8 +6,8 @@ const BeAPartner = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(()=>{
-    const load = async ()=>{ try { const r = await axiosInstance.get('/be-a-partner-page'); if (r.data?.success) setData(r.data.data); } finally { setLoading(false); } };
+  useEffect(() => {
+    const load = async () => { try { const r = await axiosInstance.get('/be-a-partner-page'); if (r.data?.success) setData(r.data.data); } finally { setLoading(false); } };
     load();
   }, []);
 
@@ -32,7 +32,7 @@ const BeAPartner = () => {
                   href="/"
                   style={{ color: "#6c757d", textDecoration: "none" }}
                 >
-                  🏠 Home
+                  Home
                 </a>
               </li>
               <li
@@ -85,15 +85,15 @@ const BeAPartner = () => {
                   >
                     {data.whySupportSection?.heading}
                   </h2>
-                  
-                    <div style={{ paddingLeft: "20px" }}>
-                      {(data.whySupportSection?.points||[]).map((p, i)=> (
-                        <div key={p._id||i} style={{ marginBottom: "20px" }}>
-                          <strong style={{ color: "#2c3e50" }}>{p.title}:</strong>
-                          <span style={{ marginLeft: "8px" }}>{p.description}</span>
-                        </div>
-                      ))}
-                    </div>
+
+                  <div style={{ paddingLeft: "20px" }}>
+                    {(data.whySupportSection?.points || []).map((p, i) => (
+                      <div key={p._id || i} style={{ marginBottom: "20px" }}>
+                        <strong style={{ color: "#2c3e50" }}>{p.title}:</strong>
+                        <span style={{ marginLeft: "8px" }}>{p.description}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Ways to Make a Difference Section */}
@@ -108,15 +108,15 @@ const BeAPartner = () => {
                   >
                     {data.waysToHelpSection?.heading}
                   </h2>
-                  
-                    <div style={{ paddingLeft: "20px" }}>
-                      {(data.waysToHelpSection?.points||[]).map((p, i)=> (
-                        <div key={p._id||i} style={{ marginBottom: "20px" }}>
-                          <strong style={{ color: "#2c3e50" }}>{p.title}:</strong>
-                          <span style={{ marginLeft: "8px" }}>{p.description}</span>
-                        </div>
-                      ))}
-                    </div>
+
+                  <div style={{ paddingLeft: "20px" }}>
+                    {(data.waysToHelpSection?.points || []).map((p, i) => (
+                      <div key={p._id || i} style={{ marginBottom: "20px" }}>
+                        <strong style={{ color: "#2c3e50" }}>{p.title}:</strong>
+                        <span style={{ marginLeft: "8px" }}>{p.description}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Call to Action */}
@@ -146,9 +146,9 @@ const BeAPartner = () => {
                     </p>
                     <p style={{ fontSize: "18px", marginBottom: "10px" }}>
                       👉 <Link
-                        to={data.ctaSection?.donateLink || '/donate'} 
-                        style={{ 
-                          color: "#fd7e14", 
+                        to={data.ctaSection?.donateLink || '/donate'}
+                        style={{
+                          color: "#fd7e14",
                           textDecoration: "none",
                           fontWeight: "600"
                         }}

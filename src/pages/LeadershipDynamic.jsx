@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLeadership } from '../hooks/useLeadership';
 import PageTemplate from '../components/PageTemplate';
+import goHome from '../lib/goHome';
 
 const LeadershipDynamic = () => {
   const [activeTab, setActiveTab] = useState('directors');
@@ -19,7 +20,7 @@ const LeadershipDynamic = () => {
   // Loading state
   if (loading) {
     return (
-      <PageTemplate 
+      <PageTemplate
         breadcrumbPath={[{ name: 'About' }, { name: 'Leadership' }]}
         title="Leadership"
         subtitle="Meet Our Team"
@@ -41,7 +42,7 @@ const LeadershipDynamic = () => {
   // Error state
   if (error) {
     return (
-      <PageTemplate 
+      <PageTemplate
         breadcrumbPath={[{ name: 'About' }, { name: 'Leadership' }]}
         title="Leadership"
         subtitle="Meet Our Team"
@@ -79,7 +80,7 @@ const LeadershipDynamic = () => {
     const memberSlug = member.name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '');
     navigate(`/about-us/leadership/bio/${memberSlug}`);
   };
-  
+
   const MemberCard = ({ member }) => (
     <div className="col-lg-3 col-md-6 mb-4">
       <div
@@ -129,7 +130,7 @@ const LeadershipDynamic = () => {
               }}
             />
           ) : (
-            <div 
+            <div
               style={{
                 width: "120px",
                 height: "120px",
@@ -146,7 +147,7 @@ const LeadershipDynamic = () => {
               {member.name.charAt(0)}
             </div>
           )}
-          
+
           {/* View Bio Overlay */}
           <div
             style={{
@@ -169,22 +170,22 @@ const LeadershipDynamic = () => {
               zIndex: 1
             }}
           >
-            View Bio 
-            <svg 
-              width="20" 
-              height="20" 
-              fill="currentColor" 
+            View Bio
+            <svg
+              width="20"
+              height="20"
+              fill="currentColor"
               viewBox="0 0 20 20"
             >
-              <path 
-                fillRule="evenodd" 
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
-                clipRule="evenodd" 
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
               />
             </svg>
           </div>
         </div>
-        
+
         <div className="card-body p-4">
           <h4
             style={{
@@ -214,14 +215,14 @@ const LeadershipDynamic = () => {
   return (
     <div className="leadership-page">
       {/* Breadcrumb */}
-      {/*
+
       <div className="container-fluid" style={{ backgroundColor: "#f8f9fa", padding: "10px 0" }}>
         <div className="container">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb mb-0" style={{ backgroundColor: "transparent" }}>
               <li className="breadcrumb-item">
                 <Link to="/" onClick={goHome} style={{ color: "#6c757d", textDecoration: "none" }}>
-                  🏠 Home
+                  Home
                 </Link>
               </li>
               <li className="breadcrumb-item">
@@ -234,7 +235,7 @@ const LeadershipDynamic = () => {
           </nav>
         </div>
       </div>
-      */}
+
 
       {/* Hero Section */}
       <section style={{ backgroundColor: "#f8f9fa", paddingBottom: "40px" }}>
