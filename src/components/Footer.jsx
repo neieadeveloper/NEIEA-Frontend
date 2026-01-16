@@ -150,8 +150,8 @@ const Footer = () => {
 
                 <button
                   type="submit"
-                  className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-6 rounded-lg transition-colors duration-200 mt-2 ${isLoading || !hasConsented ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  disabled={isLoading || !hasConsented}
+                  className={`w-full bg-ngo-color1 text-white font-semibold py-3.5 px-6 rounded-lg transition-all duration-300 mt-2 hover:bg-ngo-color1/90 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={isLoading}
                 >
                   {isLoading ? 'Subscribing...' : 'Sign up'}
                 </button>
