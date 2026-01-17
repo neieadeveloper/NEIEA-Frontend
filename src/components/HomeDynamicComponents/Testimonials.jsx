@@ -69,7 +69,7 @@ const Testimonials = ({ data }) => {
             $carousel.trigger('destroy.owl.carousel');
             $carousel.removeClass('owl-carousel owl-theme');
           }
-          
+
           // Ensure DOM elements exist
           if ($carousel.length > 0) {
             // Reinitialize
@@ -103,7 +103,7 @@ const Testimonials = ({ data }) => {
       } else {
         // Wait for scripts to load with timeout limit
         const retryCount = (window.owlRetryCount || 0) + 1;
-        
+
         if (retryCount < 100) { // Max 10 seconds
           window.owlRetryCount = retryCount;
           setTimeout(initTestimonialCarousel, 100);
@@ -117,7 +117,7 @@ const Testimonials = ({ data }) => {
     const initWithDelay = () => {
       // Immediate attempt
       initTestimonialCarousel();
-      
+
       // Fallback attempts
       setTimeout(initTestimonialCarousel, 500);
       setTimeout(initTestimonialCarousel, 1000);
@@ -130,7 +130,7 @@ const Testimonials = ({ data }) => {
     } else {
       window.addEventListener('load', initWithDelay);
     }
-    
+
     // Cleanup function
     return () => {
       if (window.$ && window.$.fn.owlCarousel) {
@@ -194,7 +194,7 @@ const Testimonials = ({ data }) => {
     <section className="testimonials">
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="section-title">{heading}</h2>
+          <h2 className="section-title text-[2rem]">{heading}</h2>
         </div>
         <div className="owl-carousel owl-theme testimonial-car">
           {testimonials.map((testimonial, index) => (

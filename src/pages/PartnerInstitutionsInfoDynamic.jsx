@@ -54,13 +54,13 @@ const PartnerInstitutionsInfoDynamic = () => {
   return (
     <div className="institution-info-page">
       {/* Breadcrumb */}
-      {/* <div className="container-fluid" style={{ backgroundColor: "#f8f9fa", padding: "10px 0" }}>
+      <div className="container-fluid" style={{ backgroundColor: "#f8f9fa", padding: "10px 0" }}>
         <div className="container">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb mb-0" style={{ backgroundColor: "transparent" }}>
               <li className="breadcrumb-item">
                 <Link to="/" onClick={goHome} style={{ color: "#6c757d", textDecoration: "none" }}>
-                  🏠 Home
+                  Home
                 </Link>
               </li>
               <li className="breadcrumb-item">
@@ -74,11 +74,11 @@ const PartnerInstitutionsInfoDynamic = () => {
             </ol>
           </nav>
         </div>
-      </div> */}
+      </div>
 
       {/* Main Content */}
-      <section style={{ 
-        backgroundColor: "#ffffff", 
+      <section style={{
+        backgroundColor: "#ffffff",
         padding: "40px 0 60px",
         fontFamily: 'system-ui, -apple-system, "Roboto", sans-serif;'
       }}>
@@ -97,8 +97,8 @@ const PartnerInstitutionsInfoDynamic = () => {
                 boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
               }}>
                 <img
-                  src={institution.detailImages && institution.detailImages[selectedImageIndex] 
-                    ? institution.detailImages[selectedImageIndex] 
+                  src={institution.detailImages && institution.detailImages[selectedImageIndex]
+                    ? institution.detailImages[selectedImageIndex]
                     : institution.featuredImage}
                   alt={`${institution.name} - Image ${selectedImageIndex + 1}`}
                   style={{
@@ -166,7 +166,7 @@ const PartnerInstitutionsInfoDynamic = () => {
 
             {/* Content Section */}
             <div className="col-lg-7">
-              <div 
+              <div
                 className="institution-details"
                 style={{
                   paddingLeft: "30px",

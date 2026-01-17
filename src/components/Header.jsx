@@ -319,10 +319,12 @@ const Header = () => {
               top: 0 !important;
               left: 0 !important;
               right: 0 !important;
-              width: 100% !important;
+              width: auto !important;
+              max-width: 100vw !important;
               background: #fff !important;
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
               z-index: 1200 !important;
+              overflow-x: hidden !important;
             }
 
             body.has-mobile-header {
@@ -560,6 +562,12 @@ const Header = () => {
             max-width: 100%;
             padding: 0 40px;
             overflow: visible !important;
+          }
+
+          @media (max-width: 991.98px) {
+            .navbar .container {
+              padding: 0 15px !important;
+            }
           }
 
           @media (min-width: 992px) {
@@ -804,19 +812,21 @@ const Header = () => {
       >
         <nav className="navbar navbar-expand-lg">
           <div className="container">
-            <div className="navbar-brand-wrapper d-flex align-items-center">
+            <div className="navbar-brand-wrapper d-flex align-items-center" style={{ flexShrink: 1, minWidth: 0, marginRight: '10px' }}>
               <Link className="navbar-brand primary-logo" onClick={goHome} to="/">
                 <img
                   src={NeiPrimaryLogo}
                   alt="NEIEA Logo"
-                  height={isMobile ? "50px" : "80px"}
+                  height={isMobile ? "40px" : "80px"}
+                  style={{ maxWidth: '100%', height: isMobile ? '40px' : '80px', width: 'auto' }}
                 />
               </Link>
               <Link className="navbar-brand" onClick={goHome} to="/">
                 <img
                   src={NeiSecondaryLogo}
                   alt="NEIEA Secondary Logo"
-                  height={isMobile ? "50px" : "80px"}
+                  height={isMobile ? "40px" : "80px"}
+                  style={{ maxWidth: '100%', height: isMobile ? '40px' : '80px', width: 'auto' }}
                 />
               </Link>
             </div>
@@ -1128,7 +1138,7 @@ const Header = () => {
 
 
 
-                {/* Donation Dropdown */}
+                {/* Donation Section */}
                 <li className="nav-item dropdown">
                   <a
                     href="#"
@@ -1158,7 +1168,7 @@ const Header = () => {
                   </ul>
                 </li>
 
-                {/* NEI USA Dropdown */}
+                {/* NEI USA Section */}
                 {/* <li className="nav-item dropdown">
                   <a
                     href="#"
@@ -1202,7 +1212,7 @@ const Header = () => {
             </div>
 
             {/* Mobile Navigation Toggle */}
-            <div className="d-flex align-items-center d-lg-none">
+            <div className="d-flex align-items-center d-lg-none" style={{ flexShrink: 0 }}>
               <button
                 onClick={handleSearchToggle}
                 className="btn btn-link p-0"
@@ -1623,7 +1633,7 @@ const Header = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <button title="submit" type="submit">
-                 <ArrowRightCircle className='arrowRightIcon'/>
+                  <ArrowRightCircle className='arrowRightIcon' />
                 </button>
               </div>
             </div>

@@ -53,17 +53,7 @@ const SocialEmbedCard = ({ embed }) => {
 
   useEffect(() => {
     // Load SDKs immediately (not on lazy load)
-    if (embed.type === 'facebook') {
-      loadScriptOnce('https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0', 'fb-sdk');
-      const checkFB = setInterval(() => {
-        if (window.FB && window.FB.XFBML) {
-          window.FB.XFBML.parse();
-          setSdkLoaded(true);
-          clearInterval(checkFB);
-        }
-      }, 100);
-      return () => clearInterval(checkFB);
-    }
+
 
     if (embed.type === 'instagram') {
       loadScriptOnce('https://www.instagram.com/embed.js', 'ig-sdk');
@@ -79,6 +69,8 @@ const SocialEmbedCard = ({ embed }) => {
 
     setSdkLoaded(true);
   }, [embed.type]);
+
+
 
   // Process Instagram embed after blockquote is mounted
   useEffect(() => {
@@ -117,14 +109,18 @@ const SocialEmbedCard = ({ embed }) => {
     }
 
     if (embed.type === 'facebook') {
+      const isVideo = /(videos|watch|reel)/i.test(embed.url);
+      const checkPlugin = isVideo ? 'video.php' : 'post.php';
+      const encodedUrl = encodeURIComponent(embed.url);
+
       return (
-        <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ height: '240px' }}>
+        <div className="relative w-full bg-white rounded-lg overflow-hidden" style={{ height: '240px' }}>
           <iframe
-            src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(embed.url)}&width=500&show_text=false&height=240&appId`}
+            src={`https://www.facebook.com/plugins/${checkPlugin}?href=${encodedUrl}&width=500&show_text=false&height=240&appId`}
             width="100%"
             height="100%"
-            style={{ border: 'none', overflow: 'hidden', display: 'block' }}
-            scrolling="no"
+            style={{ border: 'none', overflow: 'hidden' }}
+            scrolling="yes"
             frameBorder="0"
             allowFullScreen={true}
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -141,7 +137,7 @@ const SocialEmbedCard = ({ embed }) => {
             className="instagram-media"
             data-instgrm-permalink={embed.url + (embed.url.includes('?') ? '&' : '?') + 'utm_source=ig_embed'}
             data-instgrm-version="14"
-            style={{ minHeight: '240px', height: '240px' }}
+            style={{ minHeight: '240px', height: '240px', width: '100%' }}
           />
         </div>
       );
@@ -174,11 +170,11 @@ const SocialEmbed = ({ embeds = [] }) => {
       <div className="container our-mission ">
         <div className="om-cont">
           <span className='text-center'>
-              Community Voices
+            Community Voices
           </span>
-        <p className='text-center'>
-          See what our community is sharing across YouTube, Facebook, and Instagram.
-        </p>
+          <p className='text-center'>
+            See what our community is sharing across YouTube, Facebook, and Instagram.
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
           {filteredEmbeds.map((embed) => (
