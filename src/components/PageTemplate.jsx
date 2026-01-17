@@ -58,7 +58,7 @@ const PageTemplate = ({
 
           {/* Breadcrumb integrated in gradient background */}
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
-            <nav aria-label="breadcrumb" style={{ paddingTop: "15px", paddingBottom: "0" }}>
+            <nav aria-label="breadcrumb" style={{ paddingTop: "15px", paddingBottom: "10px" }}>
               <ol
                 className="breadcrumb mb-0"
                 style={{ backgroundColor: "transparent" }}

@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { format } from "date-fns";
 import { Calendar } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import axiosInstance from "@/lib/axiosInstance";
-import PageTemplate from '../components/PageTemplate';
 import goHome from "@/lib/goHome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Define interface for News item
 interface NewsItem {
@@ -21,8 +18,7 @@ interface NewsItem {
 const NewsDynamic = () => {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Use the API URL from environment variables
   // @ts-ignore
@@ -46,9 +42,8 @@ const NewsDynamic = () => {
     fetchNews();
   }, [axiosInstance.baseURL]);
 
-  const openNewsModal = (item: NewsItem) => {
-    setSelectedNews(item);
-    setIsDialogOpen(true);
+  const handleNewsClick = (id: string) => {
+    navigate(`/news/${id}`);
   };
 
   return (
@@ -101,10 +96,11 @@ const NewsDynamic = () => {
               {news.map((item) => (
                 <article
                   key={item._id}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-gray-100"
+                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-gray-100 cursor-pointer"
+                  onClick={() => handleNewsClick(item._id)}
                 >
                   {item.image && (
-                    <div className="h-56 overflow-hidden cursor-pointer" onClick={() => openNewsModal(item)}>
+                    <div className="h-56 overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -117,10 +113,7 @@ const NewsDynamic = () => {
                       <Calendar className="w-4 h-4 mr-2" />
                       {format(new Date(item.date), "MMMM d, yyyy")}
                     </div>
-                    <h2
-                      className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 hover:text-ngo-color1 transition-colors cursor-pointer"
-                      onClick={() => openNewsModal(item)}
-                    >
+                    <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 hover:text-ngo-color1 transition-colors">
                       {item.title}
                     </h2>
                     <p className="text-gray-600 mb-4 line-clamp-3">
@@ -128,12 +121,9 @@ const NewsDynamic = () => {
                     </p>
 
                     <div className="mt-auto pt-2">
-                      <button
-                        onClick={() => openNewsModal(item)}
-                        className="text-ngo-color1 font-medium hover:underline flex items-center text-sm"
-                      >
+                      <span className="text-ngo-color1 font-medium hover:underline flex items-center text-sm">
                         Read more
-                      </button>
+                      </span>
                     </div>
                   </div>
                 </article>
@@ -145,39 +135,6 @@ const NewsDynamic = () => {
             </div>
           )}
         </div>
-
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className="max-w-3xl max-h-[80vh] mt-16 overflow-y-auto">
-            {selectedNews && (
-              <>
-                <DialogHeader>
-                  <div className="flex items-center text-sm text-gray-500 mb-2">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    {format(new Date(selectedNews.date), "MMMM d, yyyy")}
-                  </div>
-                  <DialogTitle className="text-2xl font-bold text-gray-900 mb-4">
-                    {selectedNews.title}
-                  </DialogTitle>
-                </DialogHeader>
-
-                <div className="mt-4">
-                  {selectedNews.image && (
-                    <div className="w-full h-64 md:h-80 mb-6 rounded-lg overflow-hidden">
-                      <img
-                        src={selectedNews.image}
-                        alt={selectedNews.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="prose max-w-none text-gray-700 whitespace-pre-wrap">
-                    {selectedNews.content}
-                  </div>
-                </div>
-              </>
-            )}
-          </DialogContent>
-        </Dialog>
       </div>
     </>
   );

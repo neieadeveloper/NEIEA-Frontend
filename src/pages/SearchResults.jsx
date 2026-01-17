@@ -171,7 +171,7 @@ const SearchResults = () => {
       title="Search Results"
       subtitle={searchQuery ? `Results for "${searchQuery}"` : "Search our website"}
       description="Find information across our website"
-      heroImage="/assets/images/gallary/exhibition.jpg"
+    // heroImage="/assets/images/gallary/exhibition.jpg"
     >
       {/* Search Box */}
       <div className="row mb-5">

@@ -86,6 +86,7 @@ import PrivacyPolicyDynamic from './pages/PrivacyPolicyDynamic.jsx';
 import BeAPartnerDynamic from './pages/BeAPartnerDynamic.jsx';
 import SearchResults from './pages/SearchResults.jsx';
 import NewsDynamic from './pages/NewsDynamic';
+import NewsDetailsDynamic from './pages/NewsDetailsDynamic';
 const queryClient = new QueryClient();
 
 function AppContent() {
@@ -199,6 +200,7 @@ function AppContent() {
           <Route path="/privacy-policy" element={<PrivacyPolicyDynamic />} />
 
           <Route path="/news" element={<NewsDynamic />} />
+          <Route path="/news/:id" element={<NewsDetailsDynamic />} />
 
           {/* Search Route */}
           <Route path="/search" element={<SearchResults />} />

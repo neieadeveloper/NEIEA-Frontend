@@ -33,27 +33,35 @@ const BioDynamic = () => {
       setLoading(false);
     }
   };
-  // Function to decode HTML entities
+  // Function to decode HTML entities (handles multiple levels)
   const decodeHtmlEntities = (text) => {
     if (!text) return text;
+    let decoded = text;
     const textarea = document.createElement('textarea');
-    textarea.innerHTML = text;
-    return textarea.value;
+
+    // Try decoding up to 3 times to handle double/triple encoding
+    for (let i = 0; i < 50; i++) {
+      textarea.innerHTML = decoded;
+      const newDecoded = textarea.value;
+      if (newDecoded === decoded) break;
+      decoded = newDecoded;
+    }
+    return decoded;
   };
 
   const renderBioText = (text) => {
     if (!text) return 'Biography information will be updated soon.';
-    
+
     // Split text by paragraphs (double newlines)
     const paragraphs = text.split('\n\n');
-    
+
     return paragraphs.map((paragraph, index) => {
       // Regular expression to find URLs
       const urlRegex = /(https?:\/\/[^\s]+)/g;
-      
+
       // Split paragraph by URLs to create parts
       const parts = paragraph.split(urlRegex);
-      
+
       return (
         <p key={index} style={{ marginBottom: '1.5rem' }}>
           {parts.map((part, partIndex) => {
@@ -90,7 +98,7 @@ const BioDynamic = () => {
   // Loading state
   if (loading) {
     return (
-      <PageTemplate 
+      <PageTemplate
         breadcrumbPath={[{ name: 'About' }, { name: 'Leadership' }, { name: 'Bio' }]}
         title="Member Bio"
         subtitle="Loading member information..."
@@ -111,7 +119,7 @@ const BioDynamic = () => {
   // Error state
   if (error || !member) {
     return (
-      <PageTemplate 
+      <PageTemplate
         breadcrumbPath={[{ name: 'About' }, { name: 'Leadership' }, { name: 'Bio' }]}
         title="Member Not Found"
         subtitle="The requested member could not be found"
@@ -490,6 +498,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
     }
   ];
 
+  // Go home function
   const goHome = () => {
     navigate("/");
     window.location.reload(); // force refresh
@@ -497,7 +506,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
 
   return (
     <div className="bio-page">
-      {/* Custom scrollbar styles */}
+      {/* Custom styles for this page */}
       <style>
         {`
           .member-details::-webkit-scrollbar {
@@ -517,6 +526,54 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
           .member-details {
             scrollbar-width: thin !important;
             scrollbar-color: #888 #f1f1f1 !important;
+          }
+          
+          /* Responsive adjustments */
+          .bio-section {
+             min-height: 500px;
+          }
+          .member-image-container {
+             height: 400px;
+             width: 100%;
+          }
+          .member-details-container {
+             height: 400px;
+             overflow-y: auto;
+             padding-left: 30px;
+             padding-right: 15px;
+          }
+          
+          @media (max-width: 991px) {
+            .bio-section {
+               min-height: auto;
+               padding-bottom: 20px;
+            }
+            .member-image-container {
+               height: auto;
+               aspect-ratio: 1/1;
+               margin-bottom: 20px;
+               max-width: 300px;
+               margin-left: auto;
+               margin-right: auto;
+            }
+            .member-details-container {
+               height: auto;
+               overflow-y: visible;
+               padding-left: 0 !important;
+               padding-right: 0 !important;
+            }
+            .bio-title {
+               font-size: 28px !important;
+               text-align: center;
+            }
+            .bio-subtitle {
+               font-size: 18px !important;
+               text-align: center;
+               margin-bottom: 20px !important;
+            }
+            .bio-content p {
+               text-align: left !important;
+            }
           }
         `}
       </style>
@@ -547,14 +604,12 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
       <section style={{ backgroundColor: "#ffffff", padding: "40px 0" }}>
         <div className="container">
 
-          <div className="row align-items-start" style={{ minHeight: "500px" }}>
+          <div className="row align-items-start bio-section">
             <div className="col-lg-4 mb-4">
               {/* Member Image */}
-              <div 
-                className="member-image"
+              <div
+                className="member-image member-image-container"
                 style={{
-                  height: "400px",
-                  width: "100%",
                   background: "#f8f9fa",
                   display: "flex",
                   alignItems: "center",
@@ -575,7 +630,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                     }}
                   />
                 ) : (
-                  <div 
+                  <div
                     style={{
                       width: "150px",
                       height: "150px",
@@ -597,17 +652,12 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
 
             <div className="col-lg-8">
               {/* Member Details */}
-              <div 
-                className="member-details"
-                style={{
-                  paddingLeft: "30px",
-                  height: "400px",
-                  overflowY: "auto",
-                  paddingRight: "15px"
-                }}
+              <div
+                className="member-details member-details-container"
               >
                 <div>
-                  <h1 
+                  <h1
+                    className="bio-title"
                     style={{
                       fontSize: "36px",
                       fontWeight: "700",
@@ -620,7 +670,8 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                     {member.name}
                   </h1>
 
-                  <h2 
+                  <h2
+                    className="bio-subtitle"
                     style={{
                       fontSize: "22px",
                       color: "#464646",
@@ -634,7 +685,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
 
                   {/* Full Bio */}
                   <div className="bio-content">
-                    <div 
+                    <div
                       style={{
                         fontSize: "16px",
                         lineHeight: "24px",
@@ -645,6 +696,8 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                         fontFamily: "Roboto, sans-serif"
                       }}
                     >
+                      {/* Render text directly if it doesn't need complex parsing, or use renderBioText if needed. 
+                          Using decodeHtmlEntities on the content as well. */}
                       <p style={{ margin: "0 0 18px 0" }}>
                         {decodeHtmlEntities(member.fullBio || member.description || 'Biography information will be updated soon.')}
                       </p>
@@ -671,16 +724,16 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                   fontFamily: "Georgia, serif",
                   textTransform: "capitalize"
                 }}>
-                  Other {member.category === 'directors' ? 'Directors' : 
-                         member.category === 'advisors' ? 'Advisors' : 'Staff Members'}
+                  Other {member.category === 'directors' ? 'Directors' :
+                    member.category === 'advisors' ? 'Advisors' : 'Staff Members'}
                 </h3>
               </div>
-              
+
               <div style={{ position: "relative", overflow: "hidden" }}>
                 {(() => {
                   const sameCategoryMembers = relatedMembers;
                   const showNavigation = sameCategoryMembers.length > 2;
-                  
+
                   return (
                     <>
                       {/* Navigation Buttons - Only show if more than 2 members */}
@@ -748,7 +801,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                 })()}
 
                 {/* Carousel Content */}
-                <div style={{ 
+                <div style={{
                   display: "flex",
                   transition: "transform 0.3s ease",
                   transform: `translateX(-${currentSlide * 100}%)`
@@ -756,28 +809,28 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                   {(() => {
                     const sameCategoryMembers = relatedMembers;
                     const slides = [];
-                    
+
                     // Only show carousel if there are other members in the same category
                     if (sameCategoryMembers.length === 0) {
                       return <div style={{ padding: "40px", textAlign: "center", color: "#6c757d" }}>
                         No other {member.category} members to display.
                       </div>;
                     }
-                    
+
                     //Special case for single member - show on the right with arrow
                     if (sameCategoryMembers.length === 1) {
                       const singleMember = sameCategoryMembers[0];
                       return (
-                        <div style={{ 
-                          minWidth: "100%", 
-                          display: "flex", 
-                          justifyContent: "center", 
+                        <div style={{
+                          minWidth: "100%",
+                          display: "flex",
+                          justifyContent: "center",
                           alignItems: "center",
                           padding: "0 40px",
                           gap: "20px"
                         }}>
                           {/* Single Member Card */}
-                          <div 
+                          <div
                             style={{
                               width: "280px",
                               backgroundColor: "transparent",
@@ -803,7 +856,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                             }}
                           >
                             Member Image
-                            <div 
+                            <div
                               style={{
                                 width: "80px",
                                 height: "100px",
@@ -824,7 +877,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                                   }}
                                 />
                               ) : (
-                                <div 
+                                <div
                                   style={{
                                     width: "100%",
                                     height: "100%",
@@ -842,34 +895,34 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                               )}
                             </div>
 
-                              {/* Member Info */}
-                              <div style={{ flex: 1, paddingLeft: "10px" }}>
-                                <h4 
-                                  style={{
-                                    fontSize: "18px",
-                                    fontWeight: "400",
-                                    color: "#333333",
-                                    marginBottom: "6px",
-                                    fontFamily: "Georgia, serif",
-                                    lineHeight: "1.2"
-                                  }}
-                                >
-                                  {singleMember.name}
-                                </h4>
-                                <p 
-                                  style={{
-                                    fontSize: "14px",
-                                    color: "#6c757d",
-                                    margin: "0",
-                                    fontFamily: "Georgia, serif",
-                                    lineHeight: "1.4"
-                                  }}
-                                >
-                                  {singleMember.title}
-                                </p>
-                              </div>
+                            {/* Member Info */}
+                            <div style={{ flex: 1, paddingLeft: "10px" }}>
+                              <h4
+                                style={{
+                                  fontSize: "18px",
+                                  fontWeight: "400",
+                                  color: "#333333",
+                                  marginBottom: "6px",
+                                  fontFamily: "Georgia, serif",
+                                  lineHeight: "1.2"
+                                }}
+                              >
+                                {singleMember.name}
+                              </h4>
+                              <p
+                                style={{
+                                  fontSize: "14px",
+                                  color: "#6c757d",
+                                  margin: "0",
+                                  fontFamily: "Georgia, serif",
+                                  lineHeight: "1.4"
+                                }}
+                              >
+                                {singleMember.title}
+                              </p>
+                            </div>
                           </div>
-                          
+
                           {/* Navigation Arrow */}
                           <div
                             style={{
@@ -896,13 +949,13 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                         </div>
                       );
                     }
-                    
+
                     for (let i = 0; i < sameCategoryMembers.length; i += 2) {
                       const slideMembers = sameCategoryMembers.slice(i, i + 2);
                       slides.push(
                         <div key={i} style={{ minWidth: "100%", display: "flex", gap: "20px", padding: "0 60px", justifyContent: "space-between" }}>
                           {slideMembers.map((teamMember, index) => (
-                            <div 
+                            <div
                               key={teamMember.name}
                               style={{
                                 width: "280px",
@@ -929,7 +982,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                               }}
                             >
                               {/* Member Image */}
-                              <div 
+                              <div
                                 style={{
                                   width: "80px",
                                   height: "100px",
@@ -950,7 +1003,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                                     }}
                                   />
                                 ) : (
-                                  <div 
+                                  <div
                                     style={{
                                       width: "100%",
                                       height: "100%",
@@ -970,7 +1023,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
 
                               {/* Member Info */}
                               <div style={{ flex: 1, paddingLeft: "10px" }}>
-                                <h4 
+                                <h4
                                   style={{
                                     fontSize: "18px",
                                     fontWeight: "400",
@@ -982,7 +1035,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                                 >
                                   {teamMember.name}
                                 </h4>
-                                <p 
+                                <p
                                   style={{
                                     fontSize: "14px",
                                     color: "#6c757d",
@@ -999,7 +1052,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
                         </div>
                       );
                     }
-                    
+
                     return slides;
                   })()}
                 </div>
