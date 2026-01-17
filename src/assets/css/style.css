@@ -5283,24 +5283,9 @@ img[src*="kaur1.jpeg"] {
     margin-right: auto !important;
   }
   
-  /* Force mobile typography */
-  h1, .h1 {
-    font-size: 1.8rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 1rem !important;
-  }
+ 
   
-  h2, .h2 {
-    font-size: 1.5rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 0.8rem !important;
-  }
-  
-  h3, .h3 {
-    font-size: 1.3rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 0.7rem !important;
-  }
+ 
   
   h4, .h4 {
     font-size: 1.1rem !important;

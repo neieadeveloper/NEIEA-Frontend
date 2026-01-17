@@ -76,10 +76,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 /* Removed conflicting global button styles that were causing dark backgrounds */
 
