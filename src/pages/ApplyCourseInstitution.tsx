@@ -118,7 +118,7 @@ const ApplyCourseInstitution = () => {
         }
       });
       courseIds.forEach((id) => {
-        formData.append("courseIds", id);
+        formData.append("courseIds[]", id);
       });
       if (data.studentList && data.studentList.length > 0) {
         formData.append("studentList", data.studentList[0]);
@@ -156,7 +156,7 @@ const ApplyCourseInstitution = () => {
                 Applying for {courseIds.length} course{courseIds.length !== 1 ? 's' : ''} from {categoryName} category
               </p>
             </div>
-            
+
             {/* Selected Courses Section */}
             {courseIds.length > 0 && (
               <div className="selected-courses-section">
@@ -171,7 +171,7 @@ const ApplyCourseInstitution = () => {
                 </div>
               </div>
             )}
-            
+
             {/* Form Section */}
             <div className="institution-form-section">
               <h2 className="institution-form-title">Institution Details</h2>
