@@ -61,7 +61,7 @@ const SearchResults = () => {
     { title: "Donate", path: "/donate", keywords: "donate donation contribute support fund", category: "Donation" },
 
     // Courses
-    { title: "Courses", path: "/courses", keywords: "courses education training programs", category: "Courses" },
+    { title: "Courses", path: "/courses/english", keywords: "courses education training programs", category: "Courses" },
     { title: "English", path: "/courses/english", keywords: "courses education training programs english", category: "Courses" },
     { title: "Math", path: "/courses/math", keywords: "courses education training programs math", category: "Courses" },
     { title: "Science", path: "/courses/science", keywords: "courses education training programs science", category: "Courses" },
