@@ -728,7 +728,7 @@ const ApplyCourse = () => {
                   goHome();
                 }}
               >
-                Go Back to Courses
+                Go Back to Home
               </button>
             </DialogContent>
           </Dialog>
