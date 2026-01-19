@@ -31,8 +31,8 @@ const SearchResults = () => {
 
     // Our Working Model
     { title: "Blended Learning", path: "/about-us/working-model/blended-learning", keywords: "blended learning hybrid education methodology", category: "Our Working Model" },
-    { title: "Discourse-Oriented Pedagogy", path: "/about-us/working-model/blended-learning/discourse-oriented-pedagogy", keywords: "discourse pedagogy teaching methodology", category: "Our Working Model" },
-    { title: "Application of Technology", path: "/about-us/working-model/blended-learning/application-of-technology", keywords: "technology digital tools innovation", category: "Our Working Model" },
+    { title: "Discourse-Oriented Pedagogy", path: "/about-us/working-model/discourse-oriented-pedagogy", keywords: "discourse pedagogy teaching methodology", category: "Our Working Model" },
+    { title: "Application of Technology", path: "/about-us/working-model/application-of-technology", keywords: "technology digital tools innovation", category: "Our Working Model" },
     { title: "Remote Learning", path: "/about-us/working-model/remote-learning", keywords: "remote online distance learning", category: "Our Working Model" },
     { title: "Partnering Institutions", path: "/about-us/working-model/partnering-institutions", keywords: "partnering institutions organizations partners", category: "Our Working Model" },
 

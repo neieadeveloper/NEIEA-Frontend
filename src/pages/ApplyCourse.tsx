@@ -383,19 +383,19 @@ const ApplyCourse = () => {
                   <input type="hidden" {...register("convenientTimeSlot")} value={course.timeSlots?.[0] || ""} />
 
                   <div className="form-group">
-                    <label htmlFor="fullName" className="form-label">Full Name *</label>
+                    <label htmlFor="fullName" className="form-label">Full Name <span style={{ color: "red" }}>*</span></label>
                     <Input id="fullName" {...register("fullName")} placeholder="Your Full Name" className="form-input" />
                     {errors.fullName && <p className="form-error">{errors.fullName.message}</p>}
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="email" className="form-label">Email *</label>
+                    <label htmlFor="email" className="form-label">Email <span style={{ color: "red" }}>*</span></label>
                     <Input id="email" {...register("email")} type="email" placeholder="Your Email" className="form-input" />
                     {errors.email && <p className="form-error">{errors.email.message}</p>}
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="country" className="form-label">Country *</label>
+                    <label htmlFor="country" className="form-label">Country <span style={{ color: "red" }}>*</span></label>
                     <select
                       id="country"
                       {...register("country")}
@@ -414,7 +414,7 @@ const ApplyCourse = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="phone" className="form-label">Phone Number *</label>
+                    <label htmlFor="phone" className="form-label">Phone Number <span style={{ color: "red" }}>*</span></label>
                     <div className="phone-input-container">
                       <span className="country-code">{phonePrefix}</span>
                       <Input
@@ -439,7 +439,7 @@ const ApplyCourse = () => {
                   {country === "India" && (
                     <>
                       <div className="form-group">
-                        <label htmlFor="state" className="form-label">State *</label>
+                        <label htmlFor="state" className="form-label">State <span style={{ color: "red" }}>*</span></label>
                         <select
                           id="state"
                           {...register("state")}
@@ -457,7 +457,7 @@ const ApplyCourse = () => {
                       </div>
 
                       <div className="form-group">
-                        <label htmlFor="city" className="form-label">City *</label>
+                        <label htmlFor="city" className="form-label">City <span style={{ color: "red" }}>*</span></label>
                         <select
                           id="city"
                           {...register("city")}
@@ -476,7 +476,7 @@ const ApplyCourse = () => {
 
                   {country !== "India" && (
                     <div className="form-group">
-                      <label htmlFor="address" className="form-label">Address *</label>
+                      <label htmlFor="address" className="form-label">Address <span style={{ color: "red" }}>*</span></label>
                       <Textarea
                         id="address"
                         {...register("address")}
@@ -488,19 +488,19 @@ const ApplyCourse = () => {
                   )}
 
                   <div className="form-group">
-                    <label htmlFor="motherTongue" className="form-label">Mother Tongue *</label>
+                    <label htmlFor="motherTongue" className="form-label">Mother Tongue <span style={{ color: "red" }}>*</span></label>
                     <Input id="motherTongue" {...register("motherTongue")} placeholder="Mother Tongue" className="form-input" />
                     {errors.motherTongue && <p className="form-error">{errors.motherTongue.message}</p>}
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="age" className="form-label">Age *</label>
+                    <label htmlFor="age" className="form-label">Age <span style={{ color: "red" }}>*</span></label>
                     <Input id="age" {...register("age")} placeholder="Age" className="form-input" type="number" />
                     {errors.age && <p className="form-error">{errors.age.message}</p>}
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label">Gender *</label>
+                    <label className="form-label">Gender <span style={{ color: "red" }}>*</span></label>
                     <div className="radio-group">
                       {["Male", "Female", "Other"].map((gender) => (
                         <div key={gender} className="radio-item">
@@ -521,7 +521,7 @@ const ApplyCourse = () => {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label">Are you a student? *</label>
+                    <label className="form-label">Are you a student? <span style={{ color: "red" }}>*</span></label>
                     <div className="radio-group">
                       {["Yes", "No"].map((option) => (
                         <div key={option} className="radio-item">
@@ -543,7 +543,7 @@ const ApplyCourse = () => {
 
                   {isStudent === "Yes" && (
                     <div className="form-group">
-                      <label htmlFor="classStudying" className="form-label">Which class are you studying in? *</label>
+                      <label htmlFor="classStudying" className="form-label">Which class are you studying in? <span style={{ color: "red" }}>*</span></label>
                       <Input
                         id="classStudying"
                         {...register("classStudying")}
@@ -555,7 +555,7 @@ const ApplyCourse = () => {
                   )}
 
                   <div className="form-group">
-                    <label htmlFor="whatsappNumber" className="form-label">WhatsApp Contact Number *</label>
+                    <label htmlFor="whatsappNumber" className="form-label">WhatsApp Contact Number <span style={{ color: "red" }}>*</span></label>
                     <div className="phone-input-container">
                       <span className="country-code">{whatsappPrefix}</span>
                       <Input
@@ -578,7 +578,7 @@ const ApplyCourse = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="referredBy" className="form-label">Referred By *</label>
+                    <label htmlFor="referredBy" className="form-label">Referred By <span style={{ color: "red" }}>*</span></label>
                     <select id="referredBy" {...register("referredBy")} className="form-select">
                       {referredByOptions.map((option) => (
                         <option key={option._id} value={option.name}>{option.name}</option>
@@ -588,7 +588,7 @@ const ApplyCourse = () => {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label">Convenient Time Slot *</label>
+                    <label className="form-label">Convenient Time Slot <span style={{ color: "red" }}>*</span></label>
                     {course.timeSlots && course.timeSlots.length > 0 ? (
                       <div className="time-slots-container">
                         <div className="time-slots-grid">

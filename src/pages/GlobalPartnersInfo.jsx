@@ -78,7 +78,7 @@ const GlobalPartnersInfo = () => {
                         <ol className="breadcrumb mb-0" style={{ backgroundColor: "transparent" }}>
                             <li className="breadcrumb-item">
                                 <Link to="/" onClick={goHome} style={{ color: "#6c757d", textDecoration: "none" }}>
-                                    🏠 Home
+                                    Home
                                 </Link>
                             </li>
                             <li className="breadcrumb-item">
@@ -104,38 +104,38 @@ const GlobalPartnersInfo = () => {
                     <div className="row">
                         {/* Image Gallery Section */}
                         <div className="col-lg-5 mb-4">
-              {/* Main Image */}
-              <div style={{
-                width: "100%",
-                height: "400px",
-                backgroundColor: "#f8f9fa",
-                borderRadius: "8px",
-                overflow: "hidden",
-                marginBottom: "15px",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
-              }}>
-                <img
-                  src={partner.detailImages?.[selectedImageIndex] || partner.featuredImage}
-                  alt={`${partner.name} - Image ${selectedImageIndex + 1}`}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    backgroundColor: "#ffffff"
-                  }}
-                  onError={(e) => {
-                    e.target.src = "/assets/images/placeholder.png";
-                  }}
-                />
-              </div>
+                            {/* Main Image */}
+                            <div style={{
+                                width: "100%",
+                                height: "400px",
+                                backgroundColor: "#f8f9fa",
+                                borderRadius: "8px",
+                                overflow: "hidden",
+                                marginBottom: "15px",
+                                boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
+                            }}>
+                                <img
+                                    src={partner.detailImages?.[selectedImageIndex] || partner.featuredImage}
+                                    alt={`${partner.name} - Image ${selectedImageIndex + 1}`}
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "contain",
+                                        backgroundColor: "#ffffff"
+                                    }}
+                                    onError={(e) => {
+                                        e.target.src = "/assets/images/placeholder.png";
+                                    }}
+                                />
+                            </div>
 
-              {/* Thumbnail Images */}
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(80px, 1fr))",
-                gap: "10px"
-              }}>
-                {partner.detailImages?.map((image, imgIndex) => (
+                            {/* Thumbnail Images */}
+                            <div style={{
+                                display: "grid",
+                                gridTemplateColumns: "repeat(auto-fit, minmax(80px, 1fr))",
+                                gap: "10px"
+                            }}>
+                                {partner.detailImages?.map((image, imgIndex) => (
                                     <div
                                         key={imgIndex}
                                         onClick={() => setSelectedImageIndex(imgIndex)}

@@ -178,12 +178,12 @@ const ApplyCourseInstitution = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="institution-form-grid">
                   <div className="institution-form-group">
-                    <label htmlFor="email" className="institution-form-label">Email *</label>
+                    <label htmlFor="email" className="institution-form-label">Email <span style={{ color: "red" }}>*</span></label>
                     <Input id="email" {...register("email")} type="email" placeholder="Your Email" className="institution-form-input" />
                     {errors.email && <p className="institution-form-error">{errors.email.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="institutionName" className="institution-form-label">Name of Institution/Madarsa/Organization/Other *</label>
+                    <label htmlFor="institutionName" className="institution-form-label">Name of Institution/Madarsa/Organization/Other <span style={{ color: "red" }}>*</span></label>
                     <Input id="institutionName" {...register("institutionName")} placeholder="Institution Name" className="institution-form-input" />
                     {errors.institutionName && <p className="institution-form-error">{errors.institutionName.message}</p>}
                   </div>
@@ -209,17 +209,17 @@ const ApplyCourseInstitution = () => {
                     {errors.referredBy && <p className="institution-form-error">{errors.referredBy.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="coordinatorName" className="institution-form-label">Institution coordinator's name *</label>
+                    <label htmlFor="coordinatorName" className="institution-form-label">Institution coordinator's name <span style={{ color: "red" }}>*</span></label>
                     <Input id="coordinatorName" {...register("coordinatorName")} placeholder="Coordinator Name" className="institution-form-input" />
                     {errors.coordinatorName && <p className="institution-form-error">{errors.coordinatorName.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="coordinatorContactNumber1" className="institution-form-label">Institution coordinator's Contact Number-1 *</label>
+                    <label htmlFor="coordinatorContactNumber1" className="institution-form-label">Institution coordinator's Contact Number-1 <span style={{ color: "red" }}>*</span></label>
                     <Input id="coordinatorContactNumber1" {...register("coordinatorContactNumber1")} placeholder="Contact Number" className="institution-form-input" />
                     {errors.coordinatorContactNumber1 && <p className="institution-form-error">{errors.coordinatorContactNumber1.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="coordinatorEmail" className="institution-form-label">Institution coordinator's Email *</label>
+                    <label htmlFor="coordinatorEmail" className="institution-form-label">Institution coordinator's Email <span style={{ color: "red" }}>*</span></label>
                     <Input id="coordinatorEmail" {...register("coordinatorEmail")} type="email" placeholder="Coordinator Email" className="institution-form-input" />
                     {errors.coordinatorEmail && <p className="institution-form-error">{errors.coordinatorEmail.message}</p>}
                   </div>
@@ -234,7 +234,7 @@ const ApplyCourseInstitution = () => {
                     {errors.coordinatorEmail2 && <p className="institution-form-error">{errors.coordinatorEmail2.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="state" className="institution-form-label">State *</label>
+                    <label htmlFor="state" className="institution-form-label">State <span style={{ color: "red" }}>*</span></label>
                     <select id="state" {...register("state")} onChange={handleChange} className="institution-form-select">
                       <option value="">Select State</option>
                       {statesAndCities.map((stateData) => (
@@ -244,7 +244,7 @@ const ApplyCourseInstitution = () => {
                     {errors.state && <p className="institution-form-error">{errors.state.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="city" className="institution-form-label">City *</label>
+                    <label htmlFor="city" className="institution-form-label">City <span style={{ color: "red" }}>*</span></label>
                     <select id="city" {...register("city")} className="institution-form-select">
                       <option value="">Select City</option>
                       {cities.map((city) => (
@@ -254,17 +254,17 @@ const ApplyCourseInstitution = () => {
                     {errors.city && <p className="institution-form-error">{errors.city.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="address" className="institution-form-label">Institution/School's Address *</label>
+                    <label htmlFor="address" className="institution-form-label">Institution/School's Address <span style={{ color: "red" }}>*</span></label>
                     <Textarea id="address" {...register("address")} placeholder="Address" className="institution-form-textarea" />
                     {errors.address && <p className="institution-form-error">{errors.address.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="numberOfStudents" className="institution-form-label">Number of students who will be attending the class *</label>
+                    <label htmlFor="numberOfStudents" className="institution-form-label">Number of students who will be attending the class <span style={{ color: "red" }}>*</span></label>
                     <Input id="numberOfStudents" {...register("numberOfStudents")} placeholder="Number of Students" className="institution-form-input" />
                     {errors.numberOfStudents && <p className="institution-form-error">{errors.numberOfStudents.message}</p>}
                   </div>
                   <div className="institution-form-group">
-                    <label htmlFor="startMonth" className="institution-form-label">When is the earliest you can start *</label>
+                    <label htmlFor="startMonth" className="institution-form-label">When is the earliest you can start <span style={{ color: "red" }}>*</span></label>
                     <select id="startMonth" {...register("startMonth")} className="institution-form-select">
                       <option value="">Select Month</option>
                       <option value="January">January</option>
@@ -293,7 +293,7 @@ const ApplyCourseInstitution = () => {
                     {errors.institutionLogo && <p className="institution-form-error">{errors.institutionLogo.message}</p>}
                   </div>
                   <div className="institution-form-group time-slots-section">
-                    <label className="time-slots-title">Suitable Time for Class *</label>
+                    <label className="time-slots-title">Suitable Time for Class <span style={{ color: "red" }}>*</span></label>
                     <div className="time-slots-grid">
                       {timeSlots.map((time) => (
                         <div key={time} className="time-slot-item">

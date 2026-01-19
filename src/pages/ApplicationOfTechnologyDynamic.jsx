@@ -66,7 +66,6 @@ const ApplicationOfTechnologyDynamic = () => {
     <PageTemplate
       breadcrumbPath={[
         { name: "Our Working Model", link: null },
-        { name: "Blended Learning Model", link: "/about-us/working-model/blended-learning" },
         { name: "Application of Technology", link: null }
       ]}
       title={headerSection.title}
@@ -78,21 +77,21 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Digital Classroom Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h2 
-            style={{ 
-              fontSize: "36px", 
-              fontWeight: "700", 
-              color: "#212529", 
+          <h2
+            style={{
+              fontSize: "36px",
+              fontWeight: "700",
+              color: "#212529",
               marginBottom: "30px",
               textAlign: "center"
             }}
           >
             {digitalClassroomSection.title}
           </h2>
-          <p 
-            style={{ 
-              fontSize: "18px", 
-              lineHeight: "1.8", 
+          <p
+            style={{
+              fontSize: "18px",
+              lineHeight: "1.8",
               color: "#495057",
               marginBottom: "40px",
               textAlign: "center",
@@ -134,7 +133,7 @@ const ApplicationOfTechnologyDynamic = () => {
         <div className="row g-4 mb-5">
           {digitalClassroomSection.tools.map((tool, index) => (
             <div key={tool._id || index} className="col-lg-6 col-xl-4">
-              <div 
+              <div
                 className="card h-100 border-0 shadow-sm"
                 style={{ borderRadius: "15px", padding: "25px" }}
               >
@@ -142,19 +141,19 @@ const ApplicationOfTechnologyDynamic = () => {
                   <div style={{ fontSize: "48px", marginBottom: "15px" }}>
                     {tool.icon}
                   </div>
-                  <h5 
-                    style={{ 
-                      color: "#00000", 
-                      fontWeight: "600", 
-                      marginBottom: "15px" 
+                  <h5
+                    style={{
+                      color: "#00000",
+                      fontWeight: "600",
+                      marginBottom: "15px"
                     }}
                   >
                     {tool.title}
                   </h5>
-                  <p 
-                    style={{ 
-                      color: "#00000", 
-                      lineHeight: "1.6", 
+                  <p
+                    style={{
+                      color: "#00000",
+                      lineHeight: "1.6",
                       margin: "0",
                       textAlign: "justify"
                     }}
@@ -172,18 +171,18 @@ const ApplicationOfTechnologyDynamic = () => {
       {digitalClassroomSection.summaryText && (
         <div className="row mb-5">
           <div className="col-lg-10 mx-auto">
-            <div 
-              style={{ 
-                backgroundColor: "#f8f9fa", 
-                padding: "30px", 
+            <div
+              style={{
+                backgroundColor: "#f8f9fa",
+                padding: "30px",
                 borderRadius: "15px",
                 textAlign: "center"
               }}
             >
-              <p 
-                style={{ 
-                  fontSize: "18px", 
-                  lineHeight: "1.8", 
+              <p
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "1.8",
                   color: "#00000",
                   marginBottom: "0",
                   fontStyle: "italic"
@@ -199,21 +198,21 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Onboarding Process Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h2 
-            style={{ 
-              fontSize: "36px", 
-              fontWeight: "700", 
-              color: "#00000", 
+          <h2
+            style={{
+              fontSize: "36px",
+              fontWeight: "700",
+              color: "#00000",
               marginBottom: "30px",
               textAlign: "center"
             }}
           >
             {onboardingSection.title}
           </h2>
-          <p 
-            style={{ 
-              fontSize: "18px", 
-              lineHeight: "1.8", 
+          <p
+            style={{
+              fontSize: "18px",
+              lineHeight: "1.8",
               color: "#00000",
               marginBottom: "40px",
               textAlign: "center",
@@ -231,12 +230,12 @@ const ApplicationOfTechnologyDynamic = () => {
         <div className="row mb-5">
           <div className="col-12">
             <div className="d-flex justify-content-center">
-              <img 
-                src={onboardingSection.image} 
-                alt="NEIEA Onboarding Process" 
+              <img
+                src={onboardingSection.image}
+                alt="NEIEA Onboarding Process"
                 className="img-fluid rounded shadow-sm"
-                style={{ 
-                  maxHeight: "400px", 
+                style={{
+                  maxHeight: "400px",
                   width: "auto",
                   objectFit: "cover",
                   display: "block",
@@ -253,12 +252,12 @@ const ApplicationOfTechnologyDynamic = () => {
         <div className="row g-4 mb-5">
           {onboardingSection.steps.map((item, index) => (
             <div key={item._id || index} className="col-lg-6">
-              <div 
+              <div
                 className="card h-100 border-0 shadow-sm"
                 style={{ borderRadius: "15px", padding: "25px" }}
               >
                 <div className="d-flex align-items-start">
-                  <div 
+                  <div
                     style={{
                       backgroundColor: "#06038F",
                       color: "white",
@@ -277,19 +276,19 @@ const ApplicationOfTechnologyDynamic = () => {
                     {item.step}
                   </div>
                   <div>
-                    <h5 
-                      style={{ 
-                        color: "#212529", 
-                        fontWeight: "600", 
-                        marginBottom: "10px" 
+                    <h5
+                      style={{
+                        color: "#212529",
+                        fontWeight: "600",
+                        marginBottom: "10px"
                       }}
                     >
                       {item.title}
                     </h5>
-                    <p 
-                      style={{ 
-                        color: "#00000", 
-                        lineHeight: "1.6", 
+                    <p
+                      style={{
+                        color: "#00000",
+                        lineHeight: "1.6",
                         margin: "0"
                       }}
                     >
@@ -306,21 +305,21 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Digital Toolbox Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h2 
-            style={{ 
-              fontSize: "36px", 
-              fontWeight: "700", 
-              color: "#212529", 
+          <h2
+            style={{
+              fontSize: "36px",
+              fontWeight: "700",
+              color: "#212529",
               marginBottom: "30px",
               textAlign: "center"
             }}
           >
             {digitalToolboxSection.title}
           </h2>
-          <p 
-            style={{ 
-              fontSize: "18px", 
-              lineHeight: "1.8", 
+          <p
+            style={{
+              fontSize: "18px",
+              lineHeight: "1.8",
               color: "#00000",
               marginBottom: "40px",
               textAlign: "center",
@@ -337,7 +336,7 @@ const ApplicationOfTechnologyDynamic = () => {
       {digitalToolboxSection.tools && digitalToolboxSection.tools.length > 0 && (
         <div className="row mb-5">
           <div className="col-12">
-            <div 
+            <div
               className="card border-0 shadow-sm"
               style={{ borderRadius: "15px", overflow: "hidden" }}
             >
@@ -372,10 +371,10 @@ const ApplicationOfTechnologyDynamic = () => {
       {digitalToolboxSection.summaryText && (
         <div className="row mb-5">
           <div className="col-lg-10 mx-auto">
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                lineHeight: "1.8", 
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.8",
                 color: "#00000",
                 marginBottom: "0",
                 textAlign: "center",
@@ -391,21 +390,21 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Hybrid Learning Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h2 
-            style={{ 
-              fontSize: "36px", 
-              fontWeight: "700", 
-              color: "#212529", 
+          <h2
+            style={{
+              fontSize: "36px",
+              fontWeight: "700",
+              color: "#212529",
               marginBottom: "30px",
               textAlign: "center"
             }}
           >
             {hybridLearningSection.title}
           </h2>
-          <p 
-            style={{ 
-              fontSize: "18px", 
-              lineHeight: "1.8", 
+          <p
+            style={{
+              fontSize: "18px",
+              lineHeight: "1.8",
               color: "#00000",
               marginBottom: "40px",
               textAlign: "center",
@@ -421,7 +420,7 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Hybrid Learning Formats */}
       <div className="row g-4 mb-5">
         <div className="col-lg-6">
-          <div 
+          <div
             className="card h-100 border-0 shadow-sm"
             style={{ borderRadius: "15px", padding: "30px" }}
           >
@@ -429,19 +428,19 @@ const ApplicationOfTechnologyDynamic = () => {
               {/* <div style={{ fontSize: "48px", marginBottom: "15px" }}>
                 🏫
               </div> */}
-              <h4 
-                style={{ 
-                  color: "#212529", 
-                  fontWeight: "600", 
-                  marginBottom: "15px" 
+              <h4
+                style={{
+                  color: "#212529",
+                  fontWeight: "600",
+                  marginBottom: "15px"
                 }}
               >
                 {hybridLearningSection.onsiteTitle}
               </h4>
-              <p 
-                style={{ 
-                  color: "#00000", 
-                  lineHeight: "1.6", 
+              <p
+                style={{
+                  color: "#00000",
+                  lineHeight: "1.6",
                   margin: "0",
                   textAlign: "justify"
                 }}
@@ -453,7 +452,7 @@ const ApplicationOfTechnologyDynamic = () => {
         </div>
 
         <div className="col-lg-6">
-          <div 
+          <div
             className="card h-100 border-0 shadow-sm"
             style={{ borderRadius: "15px", padding: "30px" }}
           >
@@ -461,19 +460,19 @@ const ApplicationOfTechnologyDynamic = () => {
               {/* <div style={{ fontSize: "48px", marginBottom: "15px" }}>
                 🏠
               </div> */}
-              <h4 
-                style={{ 
-                  color: "#212529", 
-                  fontWeight: "600", 
-                  marginBottom: "15px" 
+              <h4
+                style={{
+                  color: "#212529",
+                  fontWeight: "600",
+                  marginBottom: "15px"
                 }}
               >
                 {hybridLearningSection.remoteTitle}
               </h4>
-              <p 
-                style={{ 
-                  color: "#00000", 
-                  lineHeight: "1.6", 
+              <p
+                style={{
+                  color: "#00000",
+                  lineHeight: "1.6",
                   margin: "0",
                   textAlign: "justify"
                 }}
@@ -488,21 +487,21 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Power Backup Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h2 
-            style={{ 
-              fontSize: "36px", 
-              fontWeight: "700", 
-              color: "#212529", 
+          <h2
+            style={{
+              fontSize: "36px",
+              fontWeight: "700",
+              color: "#212529",
               marginBottom: "30px",
               textAlign: "center"
             }}
           >
             {powerBackupSection.title}
           </h2>
-          <p 
-            style={{ 
-              fontSize: "18px", 
-              lineHeight: "1.8", 
+          <p
+            style={{
+              fontSize: "18px",
+              lineHeight: "1.8",
               color: "#00000",
               marginBottom: "30px",
               textAlign: "center",
@@ -520,18 +519,18 @@ const ApplicationOfTechnologyDynamic = () => {
         <div className="row g-4 mb-5">
           {powerBackupSection.solutions.map((solution, index) => (
             <div key={index} className="col-lg-4">
-              <div 
+              <div
                 className="card h-100 border-0 shadow-sm"
                 style={{ borderRadius: "15px", padding: "25px", textAlign: "center" }}
               >
                 {/* <div style={{ fontSize: "48px", marginBottom: "20px" }}>
                   {index === 0 ? '🔋' : index === 1 ? '🔌' : '⚡'}
                 </div> */}
-                <h5 
-                  style={{ 
-                    color: "#00000", 
-                    fontWeight: "600", 
-                    marginBottom: "15px" 
+                <h5
+                  style={{
+                    color: "#00000",
+                    fontWeight: "600",
+                    marginBottom: "15px"
                   }}
                 >
                   {solution}
@@ -546,10 +545,10 @@ const ApplicationOfTechnologyDynamic = () => {
       {powerBackupSection.summaryText && (
         <div className="row mb-5">
           <div className="col-lg-10 mx-auto">
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                lineHeight: "1.8", 
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.8",
                 color: "#00000",
                 marginBottom: "0",
                 textAlign: "center"
@@ -566,12 +565,12 @@ const ApplicationOfTechnologyDynamic = () => {
         <div className="row mb-5">
           <div className="col-12">
             <div className="d-flex justify-content-center">
-              <img 
-                src={aiIntegrationSection.image} 
-                alt="NEIEA AI-Powered Learning Tools" 
+              <img
+                src={aiIntegrationSection.image}
+                alt="NEIEA AI-Powered Learning Tools"
                 className="img-fluid rounded shadow-sm"
-                style={{ 
-                  maxHeight: "400px", 
+                style={{
+                  maxHeight: "400px",
                   width: "auto",
                   objectFit: "cover",
                   display: "block",
@@ -586,21 +585,21 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* AI Integration Section */}
       <div className="row mb-5">
         <div className="col-12">
-          <h2 
-            style={{ 
-              fontSize: "36px", 
-              fontWeight: "700", 
-              color: "#00000", 
+          <h2
+            style={{
+              fontSize: "36px",
+              fontWeight: "700",
+              color: "#00000",
               marginBottom: "30px",
               textAlign: "center"
             }}
           >
             {aiIntegrationSection.title}
           </h2>
-          <p 
-            style={{ 
-              fontSize: "18px", 
-              lineHeight: "1.8", 
+          <p
+            style={{
+              fontSize: "18px",
+              lineHeight: "1.8",
               color: "#00000",
               marginBottom: "40px",
               textAlign: "center",
@@ -618,7 +617,7 @@ const ApplicationOfTechnologyDynamic = () => {
         <div className="row g-4 mb-5">
           {aiIntegrationSection.tools.map((item, index) => (
             <div key={item._id || index} className="col-lg-6">
-              <div 
+              <div
                 className="card h-100 border-0 shadow-sm"
                 style={{ borderRadius: "15px", padding: "25px" }}
               >
@@ -636,19 +635,19 @@ const ApplicationOfTechnologyDynamic = () => {
                     🤖
                   </div> */}
                   <div>
-                    <h5 
-                      style={{ 
-                        color: "#212529", 
-                        fontWeight: "600", 
-                        marginBottom: "10px" 
+                    <h5
+                      style={{
+                        color: "#212529",
+                        fontWeight: "600",
+                        marginBottom: "10px"
                       }}
                     >
                       {item.tool}
                     </h5>
-                    <p 
-                      style={{ 
-                        color: "#00000", 
-                        lineHeight: "1.6", 
+                    <p
+                      style={{
+                        color: "#00000",
+                        lineHeight: "1.6",
                         margin: "0"
                       }}
                     >
@@ -666,10 +665,10 @@ const ApplicationOfTechnologyDynamic = () => {
       {aiIntegrationSection.summaryText && (
         <div className="row mb-5">
           <div className="col-lg-10 mx-auto">
-            <p 
-              style={{ 
-                fontSize: "18px", 
-                lineHeight: "1.8", 
+            <p
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.8",
                 color: "#00000",
                 marginBottom: "0",
                 textAlign: "center",
@@ -778,33 +777,33 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Mission Statement */}
       <div className="row mb-5">
         <div className="col-12">
-          <div 
-            style={{ 
-              backgroundColor: "#06038F", 
+          <div
+            style={{
+              backgroundColor: "#06038F",
               color: "white",
-              padding: "40px", 
-              borderRadius: "15px", 
+              padding: "40px",
+              borderRadius: "15px",
               textAlign: "center"
             }}
           >
-            <h2 
-              style={{ 
-                fontSize: "32px", 
-                fontWeight: "700", 
+            <h2
+              style={{
+                fontSize: "32px",
+                fontWeight: "700",
                 marginBottom: "20px",
                 color: "white"
               }}
             >
               {missionSection.title}
             </h2>
-            <p 
-              style={{ 
-                fontSize: "20px", 
-                lineHeight: "1.8", 
+            <p
+              style={{
+                fontSize: "20px",
+                lineHeight: "1.8",
                 marginBottom: "0",
                 maxWidth: "800px",
                 margin: "0 auto",
-                color:"#00000"
+                color: "#00000"
               }}
             >
               {missionSection.description}
@@ -816,26 +815,26 @@ const ApplicationOfTechnologyDynamic = () => {
       {/* Call to Action */}
       <div className="row">
         <div className="col-12">
-          <div 
-            style={{ 
-              backgroundColor: "#f8f9fa", 
-              padding: "40px", 
+          <div
+            style={{
+              backgroundColor: "#f8f9fa",
+              padding: "40px",
               borderRadius: "15px",
               textAlign: "center"
             }}
           >
-            <h3 
-              style={{ 
-                color: "#212529", 
-                fontWeight: "600", 
-                marginBottom: "20px" 
+            <h3
+              style={{
+                color: "#212529",
+                fontWeight: "600",
+                marginBottom: "20px"
               }}
             >
               {callToActionSection.title}
             </h3>
-            <p 
-              style={{ 
-                color: "#00000", 
+            <p
+              style={{
+                color: "#00000",
                 marginBottom: "30px",
                 fontSize: "18px",
                 maxWidth: "600px",

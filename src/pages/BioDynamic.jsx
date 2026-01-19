@@ -578,13 +578,13 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
         `}
       </style>
       {/* Breadcrumb */}
-      {/* <div className="container-fluid" style={{ backgroundColor: "#f8f9fa", padding: "10px 0" }}>
+      <div className="container-fluid" style={{ backgroundColor: "#f8f9fa", padding: "10px 0" }}>
         <div className="container">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb mb-0" style={{ backgroundColor: "transparent" }}>
               <li className="breadcrumb-item">
                 <Link to="/" onClick={goHome} style={{ color: "#6c757d", textDecoration: "none" }}>
-                  🏠 Home
+                  Home
                 </Link>
               </li>
               <li className="breadcrumb-item">
@@ -598,7 +598,7 @@ While retired, Mr. Mchawi continues to teach in the CUNY system and remains dedi
             </ol>
           </nav>
         </div>
-      </div> */}
+      </div>
 
       {/* Bio Content */}
       <section style={{ backgroundColor: "#ffffff", padding: "40px 0" }}>
