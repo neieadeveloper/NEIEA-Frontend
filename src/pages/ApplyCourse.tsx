@@ -379,8 +379,8 @@ const ApplyCourse = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-grid">
                   {/* Hidden inputs for default values */}
-                  <input type="hidden" {...register("referredBy")} value="" />
-                  <input type="hidden" {...register("convenientTimeSlot")} value={course.timeSlots?.[0] || ""} />
+                  {/* Hidden inputs for default values */
+                  }
 
                   <div className="form-group">
                     <label htmlFor="fullName" className="form-label">Full Name <span style={{ color: "red" }}>*</span></label>
