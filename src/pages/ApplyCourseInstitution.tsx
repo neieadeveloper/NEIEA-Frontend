@@ -63,6 +63,7 @@ const ApplyCourseInstitution = () => {
   const [referredByOptions, setReferredByOptions] = useState([{ _id: "", name: "Select Option" }]);
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [category, setCategory] = useState("");
+  const [showDialog, setShowDialog] = useState(false);
 
   const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -132,7 +133,7 @@ const ApplyCourseInstitution = () => {
         },
       });
       toast.success("Application submitted successfully!");
-      goHome();
+      setShowDialog(true);
     } catch (error) {
       console.error(error);
       toast.error(error.response?.data?.message || "Application submission failed");
@@ -321,9 +322,42 @@ const ApplyCourseInstitution = () => {
               </form>
             </div>
           </div>
+
+          <Dialog open={showDialog} onOpenChange={setShowDialog}>
+            <DialogContent className="application-success-dialog">
+              <DialogHeader>
+                <DialogTitle className="application-success-title">Application Submitted!</DialogTitle>
+              </DialogHeader>
+              <p className="application-success-message">
+                We've received your institution's application for <strong>{courseIds.length} course{courseIds.length !== 1 ? 's' : ''}</strong> from the <strong>{categoryName}</strong> category. You will hear from us soon!
+              </p>
+              <p className="application-success-message">
+                You have successfully applied for the courses. We will review your application and contact your coordinator for the next steps.
+              </p>
+              <p className="application-success-contact">
+                Best regards from Team NEIEA
+              </p>
+              <p className="application-success-contact">
+                For more details, please contact:
+                <br />
+                Ms. Taskeen - +917090770784
+                <br />
+                Ms. Saara - +919019431646
+              </p>
+              <button
+                className="back-button"
+                onClick={() => {
+                  setShowDialog(false);
+                  goHome();
+                }}
+              >
+                Go Back to Home
+              </button>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
-    </Layout>
+    </Layout >
   );
 };
 
