@@ -1,0 +1,31 @@
+
+/* Mobile dropdown fixes - prevent scroll jumping on iOS */
+@media (max-width: 767px) {
+  /* Prevent iOS zoom and scroll on Select interaction */
+  select, 
+  button[role='combobox'],
+  [data-radix-select-trigger] {
+    font-size: 16px !important;
+    touch-action: manipulation !important;
+  }
+
+  /* Ensure Select content stays in viewport */
+  [data-radix-select-content] {
+    position: absolute !important;
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Prevent body scroll when dropdown is open */
+  body:has([data-radix-select-content][data-state='open']) {
+    position: fixed !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Ensure form container provides positioning context */
+  form {
+    position: relative !important;
+  }
+}
