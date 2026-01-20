@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import CustomSelect from "@/components/ui/CustomSelect";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
@@ -736,7 +736,7 @@ const VolunteerForm = () => {
                           <h3 className="text-2xl font-bold text-ngo-color6 mb-6">Personal Information</h3>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
-                              <Label>First Name *</Label>
+                              <Label>First Name <span className="text-red-500">*</span></Label>
                               <Input
                                 value={formData.firstName}
                                 onChange={(e) => {
@@ -751,7 +751,7 @@ const VolunteerForm = () => {
                               {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
                             </div>
                             <div>
-                              <Label>Last Name *</Label>
+                              <Label>Last Name <span className="text-red-500">*</span></Label>
                               <Input
                                 value={formData.lastName}
                                 onChange={(e) => {
@@ -766,7 +766,7 @@ const VolunteerForm = () => {
                               {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
                             </div>
                             <div>
-                              <Label>Date of Birth *</Label>
+                              <Label>Date of Birth <span className="text-red-500">*</span></Label>
                               <Input
                                 type="date"
                                 value={formData.dob}
@@ -787,7 +787,7 @@ const VolunteerForm = () => {
                               <p className="text-gray-500 text-xs mt-1">Must be at least 16 years old to volunteer</p>
                             </div>
                             <div>
-                              <Label>Gender *</Label>
+                              <Label>Gender <span className="text-red-500">*</span></Label>
                               <RadioGroup
                                 value={formData.gender}
                                 onValueChange={(value) => handleChange("gender", value)}
@@ -805,7 +805,7 @@ const VolunteerForm = () => {
                               {errors.gender && <p className="text-red-500 text-sm">{errors.gender}</p>}
                             </div>
                             <div>
-                              <Label>Phone *</Label>
+                              <Label>Phone <span className="text-red-500">*</span></Label>
                               <Input
                                 value={formData.phone}
                                 maxLength={15}
@@ -837,7 +837,7 @@ const VolunteerForm = () => {
                               {errors.emergencyPhone && <p className="text-red-500 text-sm">{errors.emergencyPhone}</p>}
                             </div>
                             <div>
-                              <Label>Email *</Label>
+                              <Label>Email <span className="text-red-500">*</span></Label>
                               <Input
                                 type="email"
                                 value={formData.email}
@@ -848,10 +848,10 @@ const VolunteerForm = () => {
                             </div>
                           </div>
 
-                          <h4 className="text-lg font-semibold mb-4">Address *</h4>
+                          <h4 className="text-lg font-semibold mb-4">Address <span className="text-red-500">*</span></h4>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                             <div>
-                              <Label>City *</Label>
+                              <Label>City <span className="text-red-500">*</span></Label>
                               <Input
                                 value={formData.address.city}
                                 onChange={(e) => {
@@ -866,7 +866,7 @@ const VolunteerForm = () => {
                               {errors.city && <p className="text-red-500 text-sm">{errors.city}</p>}
                             </div>
                             <div>
-                              <Label>State *</Label>
+                              <Label>State <span className="text-red-500">*</span></Label>
                               <Input
                                 value={formData.address.state}
                                 onChange={(e) => {
@@ -881,7 +881,7 @@ const VolunteerForm = () => {
                               {errors.state && <p className="text-red-500 text-sm">{errors.state}</p>}
                             </div>
                             <div>
-                              <Label>Country *</Label>
+                              <Label>Country <span className="text-red-500">*</span></Label>
                               <Input
                                 value={formData.address.country}
                                 onChange={(e) => {
@@ -897,7 +897,7 @@ const VolunteerForm = () => {
                             </div>
                           </div>
 
-                          <h4 className="text-lg font-semibold mb-4">Language Proficiency *</h4>
+                          <h4 className="text-lg font-semibold mb-4">Language Proficiency <span className="text-red-500">*</span></h4>
                           {errors.languageProficiency && <p className="text-red-500 text-sm mb-4">{errors.languageProficiency}</p>}
                           {(Object.keys(formData.languageProficiency) as Array<keyof FormData["languageProficiency"]>)
                             .filter((lang) => lang !== "otherLanguage")
@@ -942,32 +942,25 @@ const VolunteerForm = () => {
                           </div>
 
                           <div className="mb-6">
-                            <Label>Daily Commitment *</Label>
-                            <Select
+                            <Label>Daily Commitment <span className="text-red-500">*</span></Label>
+                            <CustomSelect
                               value={formData.dailyCommitment}
-                              onValueChange={(value) => handleChange("dailyCommitment", value)}
-                            >
-                              <SelectTrigger className={`w-full flex flex-nowrap items-center justify-start gap-2 whitespace-nowrap ${errors.dailyCommitment ? "border-red-500" : ""}`}>
-                                <SelectValue placeholder="Select hours" />
-                              </SelectTrigger>
-                              <SelectContent
-                                className="z-[100] max-h-[200px] overflow-y-auto w-[var(--radix-select-trigger-width)] min-w-[var(--radix-select-trigger-width)]"
-                                position="popper"
-                                sideOffset={4}
-                                disablePortal={true}
-                              >
-                                <SelectItem value="1-2 hours">1-2 hours</SelectItem>
-                                <SelectItem value="2-3 hours">2-3 hours</SelectItem>
-                                <SelectItem value="3-4 hours">3-4 hours</SelectItem>
-                                <SelectItem value="4-5 hours">4-5 hours</SelectItem>
-                                <SelectItem value="More than 5 hours">More than 5 hours</SelectItem>
-                              </SelectContent>
-                            </Select>
+                              onChange={(value) => handleChange("dailyCommitment", value)}
+                              options={[
+                                "1-2 hours",
+                                "2-3 hours",
+                                "3-4 hours",
+                                "4-5 hours",
+                                "More than 5 hours"
+                              ]}
+                              placeholder="Select hours"
+                              error={errors.dailyCommitment}
+                            />
                             {errors.dailyCommitment && <p className="text-red-500 text-sm">{errors.dailyCommitment}</p>}
                           </div>
 
                           <div className="mb-6">
-                            <Label>Availability *</Label>
+                            <Label>Availability <span className="text-red-500">*</span></Label>
                             <div className="space-y-3">
                               {["Early Morning (6:00 AM - 9:00 AM)", "Late Morning (9:00 AM - 12:00 PM)", "Afternoon (12:00 PM - 4:00 PM)", "Evening (4:00 PM - 8:00 PM)", "Late Evening (8:00 PM - 11:00 PM)"].map((time) => (
                                 <div key={time} className="flex items-center space-x-2">
@@ -984,28 +977,21 @@ const VolunteerForm = () => {
                           </div>
 
                           <div className="mb-6">
-                            <Label>Volunteer Field *</Label>
-                            <Select
+                            <Label>Volunteer Field <span className="text-red-500">*</span></Label>
+                            <CustomSelect
                               value={formData.volunteerField}
-                              onValueChange={(value) => handleChange("volunteerField", value)}
-                            >
-                              <SelectTrigger className={`w-full flex flex-nowrap items-center justify-start gap-2 whitespace-nowrap ${errors.volunteerField ? "border-red-500" : ""}`}>
-                                <SelectValue placeholder="Select field" />
-                              </SelectTrigger>
-                              <SelectContent
-                                className="z-[100] max-h-[200px] overflow-y-auto w-[var(--radix-select-trigger-width)] min-w-[var(--radix-select-trigger-width)]"
-                                position="popper"
-                                sideOffset={4}
-                                disablePortal={true}
-                              >
-                                <SelectItem value="Teaching">Teaching</SelectItem>
-                                <SelectItem value="Social Media Management">Social Media Management</SelectItem>
-                                <SelectItem value="Content Creation">Content Creation</SelectItem>
-                                <SelectItem value="Outreach">Outreach</SelectItem>
-                                <SelectItem value="Fundraising">Fundraising</SelectItem>
-                                <SelectItem value="Other">Other</SelectItem>
-                              </SelectContent>
-                            </Select>
+                              onChange={(value) => handleChange("volunteerField", value)}
+                              options={[
+                                "Teaching",
+                                "Social Media Management",
+                                "Content Creation",
+                                "Outreach",
+                                "Fundraising",
+                                "Other"
+                              ]}
+                              placeholder="Select field"
+                              error={errors.volunteerField}
+                            />
                             {errors.volunteerField && <p className="text-red-500 text-sm">{errors.volunteerField}</p>}
                           </div>
                         </>
@@ -1027,7 +1013,7 @@ const VolunteerForm = () => {
                           {formData.volunteerField === "Teaching" && (
                             <>
                               <div className="mb-6">
-                                <Label>Do you have formal teaching experience? *</Label>
+                                <Label>Do you have formal teaching experience? <span className="text-red-500">*</span></Label>
                                 <RadioGroup
                                   value={formData.teachingExperience || ""}
                                   onValueChange={(value) => handleChange("teachingExperience", value)}
@@ -1046,32 +1032,25 @@ const VolunteerForm = () => {
                               </div>
 
                               <div className="mb-6">
-                                <Label>How many years of online teaching experience do you have? *</Label>
-                                <Select
+                                <Label>How many years of online teaching experience do you have? <span className="text-red-500">*</span></Label>
+                                <CustomSelect
                                   value={formData.onlineTeachingYears || ""}
-                                  onValueChange={(value) => handleChange("onlineTeachingYears", value)}
-                                >
-                                  <SelectTrigger className={`w-full flex flex-nowrap items-center justify-start gap-2 whitespace-nowrap ${errors.onlineTeachingYears ? "border-red-500" : ""}`}>
-                                    <SelectValue placeholder="Select years" />
-                                  </SelectTrigger>
-                                  <SelectContent
-                                    className="z-[100] max-h-[200px] overflow-y-auto w-[var(--radix-select-trigger-width)] min-w-[var(--radix-select-trigger-width)]"
-                                    position="popper"
-                                    sideOffset={4}
-                                    disablePortal={true}
-                                  >
-                                    <SelectItem value="No Experience">No Experience</SelectItem>
-                                    <SelectItem value="Less than 1 year">Less than 1 year</SelectItem>
-                                    <SelectItem value="1-3 years">1-3 years</SelectItem>
-                                    <SelectItem value="4-6 years">4-6 years</SelectItem>
-                                    <SelectItem value="More than 6 years">More than 6 years</SelectItem>
-                                  </SelectContent>
-                                </Select>
+                                  onChange={(value) => handleChange("onlineTeachingYears", value)}
+                                  options={[
+                                    "No Experience",
+                                    "Less than 1 year",
+                                    "1-3 years",
+                                    "4-6 years",
+                                    "More than 6 years"
+                                  ]}
+                                  placeholder="Select years"
+                                  error={errors.onlineTeachingYears}
+                                />
                                 {errors.onlineTeachingYears && <p className="text-red-500 text-sm">{errors.onlineTeachingYears}</p>}
                               </div>
 
                               <div className="mb-6">
-                                <Label>What age groups have you taught? *</Label>
+                                <Label>What age groups have you taught? <span className="text-red-500">*</span></Label>
                                 {[
                                   "Early Childhood (Preschool to Kindergarten)",
                                   "Primary School (Grades 1-5)",
@@ -1099,7 +1078,7 @@ const VolunteerForm = () => {
                               </div>
 
                               <div className="mb-6">
-                                <Label>What subjects are you most confident teaching? *</Label>
+                                <Label>What subjects are you most confident teaching? <span className="text-red-500">*</span></Label>
                                 {["Mathematics", "Science", "English", "Computers", "Other"].map((subject) => (
                                   <div key={subject} className="flex items-center space-x-2">
                                     <Checkbox
@@ -1126,25 +1105,19 @@ const VolunteerForm = () => {
                               {(["facebook", "linkedIn", "instagram", "twitter", "youTube"] as const).map((platform) => (
                                 <div key={platform} className="mb-6">
                                   <Label className="capitalize">{platform}</Label>
-                                  <Select
+                                 
+                                    <CustomSelect
                                     value={formData.socialMedia?.[platform] || ""}
-                                    onValueChange={(value) => handleSocialMediaChange(platform, value)}
-                                  >
-                                    <SelectTrigger className={`w-full flex flex-nowrap items-center justify-start gap-2 whitespace-nowrap ${errors[platform] ? "border-red-500" : ""}`}>
-                                      <SelectValue placeholder="Select experience" />
-                                    </SelectTrigger>
-                                    <SelectContent
-                                      className="z-[100] max-h-[200px] overflow-y-auto w-[var(--radix-select-trigger-width)] min-w-[var(--radix-select-trigger-width)]"
-                                      position="popper"
-                                      sideOffset={4}
-                                      disablePortal={true}
-                                    >
-                                      <SelectItem value="Expert">Expert</SelectItem>
-                                      <SelectItem value="Intermediate">Intermediate</SelectItem>
-                                      <SelectItem value="Beginner">Beginner</SelectItem>
-                                      <SelectItem value="No Experience">No Experience</SelectItem>
-                                    </SelectContent>
-                                  </Select>
+                                    onChange={(value) => handleSocialMediaChange(platform, value)}
+                                    options={[
+                                      "Expert",
+                                      "Intermediate",
+                                      "Beginner",
+                                      "No Experience"
+                                    ]}
+                                    placeholder="Select experience"
+                                    error={errors[platform]}
+                                  />
                                   {errors[platform] && <p className="text-red-500 text-sm">{errors[platform]}</p>}
                                 </div>
                               ))}
@@ -1312,7 +1285,7 @@ const VolunteerForm = () => {
                         <>
                           <h3 className="text-2xl font-bold text-ngo-color6 mb-6">Experience & Motivation</h3>
                           <div className="mb-6">
-                            <Label>Relevant Experience *</Label>
+                            <Label>Relevant Experience <span className="text-red-500">*</span></Label>
                             <Textarea
                               value={formData.relevantExperience}
                               onChange={(e) => handleChange("relevantExperience", e.target.value)}
@@ -1322,7 +1295,7 @@ const VolunteerForm = () => {
                           </div>
 
                           <div className="mb-6">
-                            <Label>Why do you want to volunteer with NEIEA? *</Label>
+                            <Label>Why do you want to volunteer with NEIEA? <span className="text-red-500">*</span></Label>
                             <Textarea
                               value={formData.motivation}
                               onChange={(e) => handleChange("motivation", e.target.value)}
@@ -1332,7 +1305,7 @@ const VolunteerForm = () => {
                           </div>
 
                           <div className="mb-6">
-                            <Label>Commitment Duration *</Label>
+                            <Label>Commitment Duration <span className="text-red-500">*</span></Label>
                             <RadioGroup
                               value={formData.commitmentDuration}
                               onValueChange={(value) => handleChange("commitmentDuration", value)}
@@ -1351,7 +1324,7 @@ const VolunteerForm = () => {
                           </div>
 
                           <div className="mb-6">
-                            <Label>Date of Joining *</Label>
+                            <Label>Date of Joining <span className="text-red-500">*</span></Label>
                             <Input
                               type="date"
                               value={formData.dateOfJoining}

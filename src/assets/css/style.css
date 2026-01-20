@@ -5648,7 +5648,7 @@ img[src*="kaur1.jpeg"] {
   }
   
   .testimonial-card p {
-    font-size: 12px !important;
+    font-size: 15px !important;
     margin-bottom: 0 !important;
   }
 }
@@ -5671,7 +5671,7 @@ img[src*="kaur1.jpeg"] {
   }
   
   .testimonial-card p {
-    font-size: 11px !important;
+    font-size: 15px !important;
   }
   
   /* Ensure testimonial content text is readable */
