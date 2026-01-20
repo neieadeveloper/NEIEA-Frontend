@@ -290,7 +290,6 @@ const TeachersTraining = () => {
                       style={{
                         backgroundColor: "transparent",
                         color: "#00000",
-                        padding: "6px 12px",
                         borderRadius: "6px",
                         fontSize: "12px",
                         fontWeight: "600",
@@ -835,7 +834,8 @@ const TeachersTraining = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    backgroundColor: "transparent"
+                    backgroundColor: "transparent",
+                    marginTop: "30px",
                   }}
                 >
                   <h3

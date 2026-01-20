@@ -175,7 +175,7 @@ const Testimonials = () => {
                     }}
                   />
                 </div>
-                <div>
+                <div className='testimonials-text'>
                   <h5
                     style={{
                       color: "#212529",

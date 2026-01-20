@@ -408,7 +408,7 @@ const SlumChildrenDynamic = () => {
           <div 
             style={{ 
               backgroundColor: "#f8f9fa", 
-              padding: "40px", 
+               
               borderRadius: "15px",
               textAlign: "center"
             }}

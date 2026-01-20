@@ -5586,6 +5586,10 @@ img[src*="kaur1.jpeg"] {
     border: 2px solid #06038F !important;
     flex-shrink: 0 !important;
   }
+  .testimonials-text{
+    width: 100%;
+    text-align: center;
+  }
   
   .testimonial-card .profile-image-container img {
     width: 100% !important;
