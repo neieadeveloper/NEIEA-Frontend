@@ -4,6 +4,8 @@ import PageTemplate from '../components/PageTemplate';
 import { submitContactForm } from '../lib/contactApi';
 import { contactFormSchema } from '../lib/contactSchema';
 
+import ConfirmationModal from '../components/ui/ConfirmationModal';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,6 +15,7 @@ const Contact = () => {
     message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const inquiryTypes = [
     'Press',
@@ -47,15 +50,8 @@ const Contact = () => {
       const result = await submitContactForm(formData);
 
       if (result.success) {
-        toast.success(result.message || 'Your message has been sent successfully!');
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          affiliation: '',
-          inquiryType: '',
-          message: ''
-        });
+        setShowModal(true);
+        // Form will be reset when modal closes
       } else {
         toast.error(result.message || 'Failed to send message. Please try again.');
       }
@@ -64,6 +60,17 @@ const Contact = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setFormData({
+      name: '',
+      email: '',
+      affiliation: '',
+      inquiryType: '',
+      message: ''
+    });
   };
 
   return (
@@ -75,7 +82,15 @@ const Contact = () => {
       subtitle="Hyderabad, Telangana, India"
       description="Email: feedback@neiea.org | Phone: +91 70907 70784 | Working Hours: Monday – Friday 10 AM – 6 PM"
     >
+      <ConfirmationModal
+        isOpen={showModal}
+        onClose={handleCloseModal}
+        title="Message Sent Successfully!"
+        message="Thank you for contacting us. We have received your message and will get back to you shortly."
+        buttonText="Close"
+      />
       <div className="row">
+
         {/* Contact Information */}
         <div className="col-lg-4">
           <div className="contact-info">

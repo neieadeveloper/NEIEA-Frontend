@@ -4,6 +4,7 @@ import PageTemplate from '../components/PageTemplate';
 import { submitContactForm } from '../lib/contactApi';
 import { contactFormSchema } from '../lib/contactSchema';
 import { useContact } from '../hooks/useContact';
+import ConfirmationModal from '../components/ui/ConfirmationModal';
 
 const Contact = () => {
   const { contactInfo, loading: contactLoading, error: contactError } = useContact();
@@ -15,6 +16,7 @@ const Contact = () => {
     message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const inquiryTypes = [
     'Press',
@@ -49,15 +51,8 @@ const Contact = () => {
       const result = await submitContactForm(formData);
 
       if (result.success) {
-        toast.success(result.message || 'Your message has been sent successfully!');
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          affiliation: '',
-          inquiryType: '',
-          message: ''
-        });
+        setShowModal(true);
+        // Form will be reset when modal closes
       } else {
         toast.error(result.message || 'Failed to send message. Please try again.');
       }
@@ -66,6 +61,17 @@ const Contact = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setFormData({
+      name: '',
+      email: '',
+      affiliation: '',
+      inquiryType: '',
+      message: ''
+    });
   };
 
   // Loading state
@@ -168,6 +174,13 @@ const Contact = () => {
       // description={contactInfo ? `Email: ${contactInfo.email} | Phone: ${contactInfo.phone} | Working Hours: ${contactInfo.workingHours}` : "Contact Information"}
       description={contactInfo ? `Email: ${contactInfo.email} | Phone: ${contactInfo.phone}` : "Contact Information"}
     >
+      <ConfirmationModal
+        isOpen={showModal}
+        onClose={handleCloseModal}
+        title="Message Sent Successfully!"
+        message="Thank you for contacting us. We have received your message and will get back to you shortly."
+        buttonText="Close"
+      />
       <div className="row">
         {/* Map and Contact Form */}
         <div className="col-12">

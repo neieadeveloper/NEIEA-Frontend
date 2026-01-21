@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { subscribeToNewsletter } from '../lib/subscriptionApi';
 import { subscriptionSchema } from '../lib/subscriptionSchema';
+import ConfirmationModal from './ui/ConfirmationModal';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ const Footer = () => {
   const [lastName, setLastName] = useState('');
   const [hasConsented, setHasConsented] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
@@ -38,11 +40,8 @@ const Footer = () => {
       const result = await subscribeToNewsletter(payload);
 
       if (result.success) {
-        toast.success(result.message || 'Thank you for subscribing!');
-        setEmail('');
-        setFirstName('');
-        setLastName('');
-        setHasConsented(false);
+        setShowModal(true);
+        // Form will be reset when modal closes
       } else {
         toast.error(result.message || 'Subscription failed. Please try again.');
       }
@@ -53,9 +52,25 @@ const Footer = () => {
     }
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setEmail('');
+    setFirstName('');
+    setLastName('');
+    setHasConsented(false);
+  };
+
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8 border-t border-slate-800">
+      <ConfirmationModal
+        isOpen={showModal}
+        onClose={handleCloseModal}
+        title="Subscribed Successfully!"
+        message="Thank you for subscribing to our newsletter. We'll keep you updated with the latest news and events."
+        buttonText="Close"
+      />
       <div className="container mx-auto px-4 lg:px-8">
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Navigation Links Column */}
           <div className="flex flex-col space-y-8">
